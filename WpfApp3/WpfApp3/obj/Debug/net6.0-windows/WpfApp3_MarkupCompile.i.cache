@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Owner\source\repos\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\
+C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\
 WpfApp3
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Owner\source\repos\WpfApp3\WpfApp3\App.xaml
+C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\App.xaml
 32120116835
 
 7781546268
 194-1951243044
 MainWindow.xaml;Page1.xaml;Window1.xaml;
 
-True
+False
 
