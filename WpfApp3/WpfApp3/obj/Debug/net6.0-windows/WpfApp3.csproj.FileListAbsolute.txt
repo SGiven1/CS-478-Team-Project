@@ -25,11 +25,9 @@ C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\bin\Debug\ne
 C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\bin\Debug\net6.0-windows\WpfApp3.dll
 C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\bin\Debug\net6.0-windows\WpfApp3.pdb
 C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\WpfApp3.csproj.AssemblyReference.cache
-C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\NotesEditor.g.cs
 C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\WpfApp3_MarkupCompile.cache
 C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\WpfApp3_MarkupCompile.lref
-C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\NotesEditor.baml
 C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\WpfApp3.g.resources
 C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\WpfApp3.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\WpfApp3.AssemblyInfoInputs.cache
@@ -42,3 +40,5 @@ C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\ne
 C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\ref\WpfApp3.dll
 C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\Window1.g.cs
+C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\obj\Debug\net6.0-windows\Window1.baml

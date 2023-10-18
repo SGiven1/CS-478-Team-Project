@@ -5,12 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="NoResize"
+        Background="#272537">
     <Grid Margin="0,0,0,-6">
-        <TextBox HorizontalAlignment="Center" Margin="0,160,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox HorizontalAlignment="Center" Margin="0,183,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="Title" Content="Bliss Notes Editor" HorizontalAlignment="Center" Margin="0,63,0,0" VerticalAlignment="Top" Height="62" Width="536" FontSize="48" FontFamily="Cascadia Mono SemiBold"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="420,236,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="340,236,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.637,-1.009"/>
+        <TextBox Margin="340,160,340,262" Text="Username" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="White" RenderTransformOrigin="0.5,0.596">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <PasswordBox HorizontalAlignment="Center" Margin="0,189,0,0" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1,1,1,1" BorderBrush="White">
+            <PasswordBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </PasswordBox.Resources>
+        </PasswordBox>
+        <Label x:Name="Title" Content="Bliss Notes Editor" HorizontalAlignment="Center" Margin="0,63,0,0" VerticalAlignment="Top" Height="62" Width="536" FontSize="48" FontFamily="Cascadia Mono SemiBold" Background="Transparent" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
+        <Button Margin="338,234,405,189" Content="Sign Up" FontSize="10" HorizontalContentAlignment="Center">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Margin="400,234,343,189" Content="Login" HorizontalContentAlignment="Center" FontSize="10">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label Content="Continue as guest?" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="LightBlue" FontStyle="Italic" Height="22" Width="71" FontSize="7" VerticalContentAlignment="Top" Margin="393,207,0,0"/>
+
     </Grid>
 </Window>
