@@ -1,0 +1,37 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<dataset xmlns="http://developer.cognos.com/schemas/xmldata/1/" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+ <!--
+
+<dataset
+    xmlns="http://developer.cognos.com/schemas/xmldata/1/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:schemaLocation="http://developer.cognos.com/schemas/xmldata/1/ xmldata.xsd"
+>
+-->
+<metadata>
+<item name="TERM_DESC" type="xs:string" length="512"/>
+<item name="TERM" type="xs:string" length="128"/>
+</metadata>
+<data>
+<row>
+<value>Third Summer 2014</value>
+<value>201450</value>
+</row>
+<row>
+<value>Second Summer 2014</value>
+<value>201440</value>
+</row>
+<row>
+<value>First Summer 2014</value>
+<value>201430</value>
+</row>
+<row>
+<value>Spring 2014</value>
+<value>201420</value>
+</row>
+<row>
+<value>Fall 2013</value>
+<value>201410</value>
+</row>
+</data>
+</dataset>
