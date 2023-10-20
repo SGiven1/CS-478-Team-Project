@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp3"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Bliss Editor" Height="450" Width="800">
+
+  <Grid>
+    <Label Content="This is a test for pushing to GitHub" HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top"/>
+
+  </Grid>
 </Window>
