@@ -5,10 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp3"
         mc:Ignorable="d"
-        Title="Bliss Editor" Height="450" Width="800">
+        Title="Bliss Editor" Height="450" Width="800" Icon="C:\Users\stile\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\Images\boplin-icon.png" Background="#272537" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <!-- General design of code below is from https://wpf-tutorial.com/rich-text-controls/how-to-creating-a-rich-text-editor/ -->
+    <Window.CommandBindings>
+    <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed" />
+    <CommandBinding Command="ApplicationCommands.Save" Executed="Save_Executed" />
+  </Window.CommandBindings>
 
-  <Grid>
-    <Label Content="This is a test for pushing to GitHub" HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top"/>
-
-  </Grid>
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <Button Command="ApplicationCommands.Open">
+                <Image Source="C:\Users\stile\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\Images\Folder.png" Width="16" Height="16" />
+            </Button>
+            <Button Command="ApplicationCommands.Save">
+                <Image Source="C:\Users\stile\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\Images\Save Disk.png" Width="16" Height="16" />
+            </Button>
+            <Separator />
+            <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold">
+                <Image Source="C:\Users\stile\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\Images\Bold.png" Width="16" Height="16" />
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic">
+                <Image Source="C:\Users\stile\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\Images\Italics.png" Width="16" Height="16" />
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderline">
+                <Image Source="C:\Users\stile\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\Images\Underline.png" Width="16" Height="16" />
+            </ToggleButton>
+            <Separator />
+            <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged"/>
+            <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged"/>
+        </ToolBar>
+        <RichTextBox Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" />
+    </DockPanel>
 </Window>

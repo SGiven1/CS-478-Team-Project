@@ -8,16 +8,16 @@
         Title="MainWindow" Height="450" Width="800"
         WindowStyle="SingleBorderWindow"
         ResizeMode="NoResize"
-        Background="#272537">
+        Background="#272537" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,0,-6">
-        <TextBox Margin="340,160,340,262" Text="Username" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="White" RenderTransformOrigin="0.5,0.596">
+        <TextBox Text="Username" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="White" Margin="0,160,0,0" HorizontalAlignment="Center">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3"/>
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <PasswordBox HorizontalAlignment="Center" Margin="0,189,0,0" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1,1,1,1" BorderBrush="White">
+        <PasswordBox Margin="0,189,0,0" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1,1,1,1" BorderBrush="White" HorizontalAlignment="Center" Width="120" Height="18" VerticalAlignment="Top">
             <PasswordBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3"/>
@@ -29,14 +29,14 @@
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <Button Margin="338,234,405,189" Content="Sign Up" FontSize="10" HorizontalContentAlignment="Center">
+        <Button Margin="0,234,405,0" Content="Sign Up" FontSize="10" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Width="57" Height="17" VerticalAlignment="Top">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Margin="400,234,343,189" Content="Login" HorizontalContentAlignment="Center" FontSize="10">
+        <Button Margin="400,234,0,0" Content="Login" HorizontalContentAlignment="Center" FontSize="10" HorizontalAlignment="Left" Width="57" Height="17" VerticalAlignment="Top" Click="Button_Click_1">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>

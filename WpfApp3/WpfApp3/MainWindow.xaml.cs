@@ -29,5 +29,13 @@ namespace WpfApp3
         {
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            /* Code Below from https://stackoverflow.com/questions/21706226/how-to-navigate-between-windows-in-wpf */
+            var newWindow = new Window1(); //create your new form.
+            newWindow.Show(); //show the new form.
+            this.Close(); //only if you want to close the current form.
+        }
     }
 }
