@@ -31,6 +31,10 @@
                 <Image Source="/Underline.png" Width="16" Height="16" />
             </ToggleButton>
             <Separator />
+            <Button Click="Insert_Image">
+                <Image Source="/InsertImage.jpg" Width="16" Height="16" />
+            </Button>
+            <Separator/>
             <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged"/>
             <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged"/>
         </ToolBar>
