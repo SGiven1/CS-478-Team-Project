@@ -15,20 +15,20 @@
     <DockPanel>
         <ToolBar DockPanel.Dock="Top">
             <Button Command="ApplicationCommands.Open">
-                <Image Source="C:\Users\stile\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\Images\Folder.png" Width="16" Height="16" />
+                <Image Source="/Folder.png" Width="16" Height="16" />
             </Button>
             <Button Command="ApplicationCommands.Save">
-                <Image Source="C:\Users\stile\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\Images\Save Disk.png" Width="16" Height="16" />
+                <Image Source="/Save Disk.png" Width="16" Height="16" />
             </Button>
             <Separator />
             <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold">
-                <Image Source="C:\Users\stile\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\Images\Bold.png" Width="16" Height="16" />
+                <Image Source="/Bold.png" Width="16" Height="16" />
             </ToggleButton>
             <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic">
-                <Image Source="C:\Users\stile\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\Images\Italics.png" Width="16" Height="16" />
+                <Image Source="/Italics.png" Width="16" Height="16" />
             </ToggleButton>
             <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderline">
-                <Image Source="C:\Users\stile\Documents\GitHub\CS-478-Team-Project\WpfApp3\WpfApp3\Images\Underline.png" Width="16" Height="16" />
+                <Image Source="/Underline.png" Width="16" Height="16" />
             </ToggleButton>
             <Separator />
             <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged"/>
