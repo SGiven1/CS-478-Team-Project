@@ -79,6 +79,32 @@ namespace WpfApp3
         {
             rtbEditor.Selection.ApplyPropertyValue(Inline.FontSizeProperty, cmbFontSize.Text);
         }
+
+        private void Insert_Image(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Builder (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg";
+            openFileDialog.Multiselect = true;
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                var clipboardData = Clipboard.GetDataObject();
+                //BitmapImage bitmapImage = new BitmapImage(new Uri(openFileDialog.FileName, UriKind.Absolute));
+                Uri uri = new Uri(openFileDialog.FileName, UriKind.Absolute);
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.UriSource = uri;
+
+                bitmapImage.DecodePixelHeight = 200;
+                bitmapImage.DecodePixelWidth = 200;
+
+                bitmapImage.EndInit();
+                Clipboard.SetImage(bitmapImage);
+                rtbEditor.Paste();
+                Clipboard.SetDataObject(clipboardData);
+
+            }
+        }
     }
 }
 
