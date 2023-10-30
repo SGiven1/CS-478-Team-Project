@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BlissEditor"
-        Title="Bliss Editor" Height="450" Width="800" Background="#272537" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Bliss Editor" Icon="/Images/boplin-icon.png" Height="450" Width="800" Background="#272537" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <!-- General design of code below is from https://wpf-tutorial.com/rich-text-controls/how-to-creating-a-rich-text-editor/ -->
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed" />
