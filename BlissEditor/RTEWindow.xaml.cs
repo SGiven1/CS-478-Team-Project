@@ -42,7 +42,15 @@ namespace BlissEditor
             temp = rtbEditor.Selection.GetPropertyValue(Inline.FontFamilyProperty);
             cmbFontFamily.SelectedItem = temp;
             temp = rtbEditor.Selection.GetPropertyValue(Inline.FontSizeProperty);
-            cmbFontSize.Text = temp.ToString();
+            if (temp.ToString() == "{DependencyProperty.UnsetValue}")
+            {
+                cmbFontSize.Text = " ";
+            }
+            else
+            {
+                cmbFontSize.Text = temp.ToString();
+            }
+            
         }
 
         private void Open_Executed(object sender, ExecutedRoutedEventArgs e)
