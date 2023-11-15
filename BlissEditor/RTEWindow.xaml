@@ -39,6 +39,9 @@
             <Button Name="btnTable" Click="Insert_Table">
                 <Image x:Name="btnTable1" Source="/Images/Table.png" Width="16" Height="16"/>
             </Button>
+            <Button x:Name="btnExportPDF" Click="Export_PDF">
+                <Image x:Name="btnExportPDF1" Source="/ExportPDF.png" Width="16" Height="16"/>
+            </Button>
         </ToolBar>
         <RichTextBox Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" VerticalScrollBarVisibility="Auto" Block.LineHeight="2"/>
     </DockPanel>

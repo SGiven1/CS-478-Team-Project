@@ -8,6 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="ExportPDF.png" />
 	  <None Remove="Images\Bold.png" />
 	  <None Remove="Images\boplin-icon.png" />
 	  <None Remove="Images\Folder.png" />
@@ -15,11 +16,17 @@
 	  <None Remove="Images\Italics.png" />
 	  <None Remove="Images\Save Disk.png" />
 	  <None Remove="Images\Underline.png" />
-    <None Remove="Images\Table.png" />
-    <None Remove="Images\DataTable.png" />
+	  <None Remove="Images\ExportPDF.png" />
+      <None Remove="Images\Table.png" />
+      <None Remove="Images\DataTable.png" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="QuestPDF" Version="2023.10.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="ExportPDF.png" />
 	  <Resource Include="Images\Bold.png" />
 	  <Resource Include="Images\boplin-icon.png" />
 	  <Resource Include="Images\Folder.png" />
@@ -27,8 +34,9 @@
 	  <Resource Include="Images\Italics.png" />
 	  <Resource Include="Images\Save Disk.png" />
 	  <Resource Include="Images\Underline.png" />
-    <Resource Include="Images\Table.png" />
-    <Resource Include="Images\DataTable.png" />
+	  <Resource Include="Images\ExportPDF.png" />
+      <Resource Include="Images\Table.png" />
+      <Resource Include="Images\DataTable.png" />
 	</ItemGroup>
 
 </Project>

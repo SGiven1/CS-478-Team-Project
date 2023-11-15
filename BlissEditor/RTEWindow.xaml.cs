@@ -15,6 +15,10 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using System.Runtime.InteropServices;
 using System.Windows.Controls.Primitives;
+using QuestPDF.Fluent;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
+using System.Reflection;
 
 namespace BlissEditor
 {
@@ -28,7 +32,7 @@ namespace BlissEditor
         public RTEWindow()
         {
             InitializeComponent();
-            cmbFontFamily.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
+            cmbFontFamily.ItemsSource = System.Windows.Media.Fonts.SystemFontFamilies.OrderBy(f => f.Source);
             cmbFontSize.ItemsSource = new List<double>() { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 };
         }
 
@@ -137,6 +141,39 @@ namespace BlissEditor
             rtbEditor.Document.Blocks.Add(table);
             rtbEditor.EndChange();
             rtbEditor.AppendText("newline");
+        }
+
+        private void Export_PDF(object sender, RoutedEventArgs e)
+        {
+            /* https://github.com/QuestPDF/QuestPDF/blob/97153ad83d36f1174f51d981a5131948661aea4a/Source/QuestPDF.Examples/LicenseSetup.cs#L7 */
+            QuestPDF.Settings.License = LicenseType.Community;
+
+            if (rtbEditor != null)
+            {
+                var document = Document.Create(container =>
+                {
+                    container.Page(page =>
+                    {
+                        page.Size(PageSizes.A4); // may want different options, but defaults to standard A4
+                        page.Margin(2, Unit.Centimetre);
+                        page.DefaultTextStyle(x => x.FontSize(12));
+
+                        page.Content()
+                        .PaddingVertical(1, Unit.Centimetre)
+                        .Column(x =>
+                        {
+                            x.Spacing(20);
+                            TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                            x.Item().Text(range.Text); // only plaintext for right now
+                        });
+                    });
+                });
+
+                var pdfContent = document.GeneratePdf();
+                var filePath = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\BlissExport.pdf";
+                System.IO.File.WriteAllBytes(filePath, pdfContent);
+                MessageBox.Show("Exported: " + filePath);
+            }
         }
     }
 }

@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "ms+N2D/qzDqARLvOdZMiU7dzKLviqg5pFWw8iVUpAq6zADpi/rLYOHbtH6EPqz6ntOl9Td8IO79TdSzXomYdcA==",
+  "dgSpecHash": "80+FryjgLzn/OUQLg1f4UsaJsGCc6FxSCOzl1QonpPHNmltb3otHu8u/y/JpZ2F0vSh/70m0SBtVIL2H4K6NqQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\stile\\Documents\\GitHub\\CS-478-Team-Project\\BlissEditor\\BlissEditor.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\maxeg\\Downloads\\CS-478-Team-Project-main (3)\\CS-478-Team-Project-main\\BlissEditor\\BlissEditor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\maxeg\\.nuget\\packages\\harfbuzzsharp\\7.3.0\\harfbuzzsharp.7.3.0.nupkg.sha512",
+    "C:\\Users\\maxeg\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\7.3.0\\harfbuzzsharp.nativeassets.macos.7.3.0.nupkg.sha512",
+    "C:\\Users\\maxeg\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\7.3.0\\harfbuzzsharp.nativeassets.win32.7.3.0.nupkg.sha512",
+    "C:\\Users\\maxeg\\.nuget\\packages\\questpdf\\2023.10.2\\questpdf.2023.10.2.nupkg.sha512",
+    "C:\\Users\\maxeg\\.nuget\\packages\\skiasharp\\2.88.6\\skiasharp.2.88.6.nupkg.sha512",
+    "C:\\Users\\maxeg\\.nuget\\packages\\skiasharp.harfbuzz\\2.88.6\\skiasharp.harfbuzz.2.88.6.nupkg.sha512",
+    "C:\\Users\\maxeg\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.6\\skiasharp.nativeassets.macos.2.88.6.nupkg.sha512",
+    "C:\\Users\\maxeg\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.6\\skiasharp.nativeassets.win32.2.88.6.nupkg.sha512"
+  ],
   "logs": []
 }

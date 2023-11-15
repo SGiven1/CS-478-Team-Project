@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlissEditor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2cd97003f27f8073c6f6867d99c6fa7f152b3108")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlissEditor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlissEditor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

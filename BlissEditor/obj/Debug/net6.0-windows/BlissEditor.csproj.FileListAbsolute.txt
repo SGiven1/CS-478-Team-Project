@@ -21,3 +21,39 @@ C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0
 C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.pdb
 C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.genruntimeconfig.cache
 C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\ref\BlissEditor.dll
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\BlissEditor.exe
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\BlissEditor.deps.json
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\BlissEditor.runtimeconfig.json
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\BlissEditor.dll
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\BlissEditor.pdb
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\HarfBuzzSharp.dll
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\QuestPDF.dll
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\SkiaSharp.dll
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\SkiaSharp.HarfBuzz.dll
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\runtimes\osx\native\libHarfBuzzSharp.dylib
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\runtimes\win-x64\native\libHarfBuzzSharp.dll
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\runtimes\win-x86\native\libHarfBuzzSharp.dll
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\bin\Debug\net6.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.csproj.AssemblyReference.cache
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\RTEWindow.g.cs
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\BlissEditor_MarkupCompile.cache
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\BlissEditor_MarkupCompile.lref
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\RTEWindow.baml
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.g.resources
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.AssemblyInfoInputs.cache
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.AssemblyInfo.cs
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.csproj.CoreCompileInputs.cache
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.csproj.CopyComplete
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.dll
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\refint\BlissEditor.dll
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.pdb
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.genruntimeconfig.cache
+C:\Users\maxeg\Downloads\CS-478-Team-Project-main (3)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\ref\BlissEditor.dll
