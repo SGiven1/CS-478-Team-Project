@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maxeg\\Downloads\\CS-478-Team-Project-main (3)\\CS-478-Team-Project-main\\BlissEditor\\BlissEditor.csproj": {}
+    "C:\\Users\\maxeg\\Documents\\hy\\CS-478-Team-Project\\BlissEditor\\BlissEditor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maxeg\\Downloads\\CS-478-Team-Project-main (3)\\CS-478-Team-Project-main\\BlissEditor\\BlissEditor.csproj": {
+    "C:\\Users\\maxeg\\Documents\\hy\\CS-478-Team-Project\\BlissEditor\\BlissEditor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maxeg\\Downloads\\CS-478-Team-Project-main (3)\\CS-478-Team-Project-main\\BlissEditor\\BlissEditor.csproj",
+        "projectUniqueName": "C:\\Users\\maxeg\\Documents\\hy\\CS-478-Team-Project\\BlissEditor\\BlissEditor.csproj",
         "projectName": "BlissEditor",
-        "projectPath": "C:\\Users\\maxeg\\Downloads\\CS-478-Team-Project-main (3)\\CS-478-Team-Project-main\\BlissEditor\\BlissEditor.csproj",
+        "projectPath": "C:\\Users\\maxeg\\Documents\\hy\\CS-478-Team-Project\\BlissEditor\\BlissEditor.csproj",
         "packagesPath": "C:\\Users\\maxeg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maxeg\\Downloads\\CS-478-Team-Project-main (3)\\CS-478-Team-Project-main\\BlissEditor\\obj\\",
+        "outputPath": "C:\\Users\\maxeg\\Documents\\hy\\CS-478-Team-Project\\BlissEditor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maxeg\\AppData\\Roaming\\NuGet\\NuGet.Config",
