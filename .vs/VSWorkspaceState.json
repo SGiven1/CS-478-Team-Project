@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BlissEditor",
+    "\\BlissEditor\\Images"
   ],
   "SelectedNode": "\\BlissEditor.sln",
   "PreviewInSolutionExplorer": false

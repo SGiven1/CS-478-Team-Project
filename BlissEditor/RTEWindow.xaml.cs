@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Win32;
+using System.Runtime.InteropServices;
+using System.Windows.Controls.Primitives;
 
 namespace BlissEditor
 {
@@ -50,7 +52,7 @@ namespace BlissEditor
             {
                 cmbFontSize.Text = temp.ToString();
             }
-            
+
         }
 
         private void Open_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -112,6 +114,29 @@ namespace BlissEditor
                 Clipboard.SetDataObject(clipboardData);
 
             }
+        }
+
+        private void Insert_Table(object sender, RoutedEventArgs e)
+        {
+            rtbEditor.BeginChange();
+            var table = new Table();
+            var gridLenghtConvertor = new GridLengthConverter();
+            table.Columns.Add(new TableColumn());
+            table.Columns.Add(new TableColumn());
+            table.Columns.Add(new TableColumn());
+
+
+            table.RowGroups.Add(new TableRowGroup());
+            for (int i = 0; i < 3; i++)
+            {
+                table.RowGroups[0].Rows.Add(new TableRow());
+                table.RowGroups[0].Rows[i].Cells.Add(new TableCell(new Paragraph(new Run("Row" + (i + 1).ToString() + " Column1"))) /*{ BorderThickness = new Thickness(1), BorderBrush = Brushes.Black }*/);
+                table.RowGroups[0].Rows[i].Cells.Add(new TableCell(new Paragraph(new Run("Row" + (i + 1).ToString() + " Column2"))) /*{ BorderThickness = new Thickness(1), BorderBrush = Brushes.Black }*/);
+                table.RowGroups[0].Rows[i].Cells.Add(new TableCell(new Paragraph(new Run("Row" + (i + 1).ToString() + " Column3"))) /*{ BorderThickness = new Thickness(1), BorderBrush = Brushes.Black }*/);
+            }
+            rtbEditor.Document.Blocks.Add(table);
+            rtbEditor.EndChange();
+            rtbEditor.AppendText("newline");
         }
     }
 }

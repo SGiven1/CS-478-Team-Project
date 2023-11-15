@@ -36,6 +36,9 @@
             <Separator/>
             <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged"/>
             <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged"/>
+            <Button Name="btnTable" Click="Insert_Table">
+                <Image x:Name="btnTable1" Source="/Images/Table.png" Width="16" Height="16"/>
+            </Button>
         </ToolBar>
         <RichTextBox Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" VerticalScrollBarVisibility="Auto" Block.LineHeight="2"/>
     </DockPanel>

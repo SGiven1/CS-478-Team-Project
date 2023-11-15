@@ -15,6 +15,8 @@
 	  <None Remove="Images\Italics.png" />
 	  <None Remove="Images\Save Disk.png" />
 	  <None Remove="Images\Underline.png" />
+    <None Remove="Images\Table.png" />
+    <None Remove="Images\DataTable.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -25,6 +27,8 @@
 	  <Resource Include="Images\Italics.png" />
 	  <Resource Include="Images\Save Disk.png" />
 	  <Resource Include="Images\Underline.png" />
+    <Resource Include="Images\Table.png" />
+    <Resource Include="Images\DataTable.png" />
 	</ItemGroup>
 
 </Project>

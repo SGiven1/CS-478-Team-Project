@@ -3,7 +3,6 @@ C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0
 C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\BlissEditor.runtimeconfig.json
 C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\BlissEditor.dll
 C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\BlissEditor.pdb
-C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.csproj.AssemblyReference.cache
 C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\RTEWindow.g.cs
 C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\App.g.cs
@@ -16,6 +15,7 @@ C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0
 C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.AssemblyInfoInputs.cache
 C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.AssemblyInfo.cs
 C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.csproj.CoreCompileInputs.cache
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.sourcelink.json
 C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.dll
 C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\refint\BlissEditor.dll
 C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.pdb
