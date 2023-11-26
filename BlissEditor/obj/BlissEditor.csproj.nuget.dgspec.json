@@ -1,24 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maxeg\\Documents\\hy\\CS-478-Team-Project\\BlissEditor\\BlissEditor.csproj": {}
+    "C:\\Users\\Owner\\Documents\\GitHub\\CS-478-Team-Project\\BlissEditor\\BlissEditor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maxeg\\Documents\\hy\\CS-478-Team-Project\\BlissEditor\\BlissEditor.csproj": {
+    "C:\\Users\\Owner\\Documents\\GitHub\\CS-478-Team-Project\\BlissEditor\\BlissEditor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maxeg\\Documents\\hy\\CS-478-Team-Project\\BlissEditor\\BlissEditor.csproj",
+        "projectUniqueName": "C:\\Users\\Owner\\Documents\\GitHub\\CS-478-Team-Project\\BlissEditor\\BlissEditor.csproj",
         "projectName": "BlissEditor",
-        "projectPath": "C:\\Users\\maxeg\\Documents\\hy\\CS-478-Team-Project\\BlissEditor\\BlissEditor.csproj",
-        "packagesPath": "C:\\Users\\maxeg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maxeg\\Documents\\hy\\CS-478-Team-Project\\BlissEditor\\obj\\",
+        "projectPath": "C:\\Users\\Owner\\Documents\\GitHub\\CS-478-Team-Project\\BlissEditor\\BlissEditor.csproj",
+        "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Owner\\Documents\\GitHub\\CS-478-Team-Project\\BlissEditor\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\maxeg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -40,6 +44,10 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.2, )"
+            },
             "QuestPDF": {
               "target": "Package",
               "version": "[2023.10.2, )"
@@ -51,8 +59,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -64,7 +71,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
