@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Npgsql;
 
 namespace BlissEditor
 {
@@ -21,11 +22,18 @@ namespace BlissEditor
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static string HOST = "blisseditorserver.postgres.database.azure.com";
+        private static string PORT = "5432";
+        private static string User = "BlissPG@blisseditorserver";
+        private static string Password = "BlissEditor@";
+        private static string DBName = "blisseditorserver";
         public MainWindow()
         {
             InitializeComponent();
             lblIncorrect.Visibility = Visibility.Hidden;
             txbPasswordShow.Visibility = Visibility.Hidden;
+            string connString = String.Format("Server={0};Username={1};Database={2};Port={3};Password={4};SSLMode=Prefer", HOST, User,DBName,PORT,Password);
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
