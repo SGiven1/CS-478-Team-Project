@@ -19,6 +19,7 @@ using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using System.Reflection;
+using Image = System.Windows.Controls.Image;
 
 namespace BlissEditor
 {
@@ -96,27 +97,50 @@ namespace BlissEditor
 
         private void Insert_Image(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Builder (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg";
-            openFileDialog.Multiselect = true;
+            //OpenFileDialog openFileDialog = new OpenFileDialog();
+            //openFileDialog.Filter = "Builder (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg";
+            //openFileDialog.Multiselect = true;
 
-            if (openFileDialog.ShowDialog() == true)
+            //if (openFileDialog.ShowDialog() == true)
+            //{
+            //    var clipboardData = Clipboard.GetDataObject();
+            //    //BitmapImage bitmapImage = new BitmapImage(new Uri(openFileDialog.FileName, UriKind.Absolute));
+            //    Uri uri = new Uri(openFileDialog.FileName, UriKind.Absolute);
+            //    BitmapImage bitmapImage = new BitmapImage();
+            //    bitmapImage.BeginInit();
+            //    bitmapImage.UriSource = uri;
+
+            //    bitmapImage.DecodePixelHeight = 200;
+            //    bitmapImage.DecodePixelWidth = 200;
+
+            //    bitmapImage.EndInit();
+            //    Clipboard.SetImage(bitmapImage);
+            //    rtbEditor.Paste();
+            //    Clipboard.SetDataObject(clipboardData);
+
+            //}
+
+            //Code below and for Image_Height and TextRangeExt class used from:
+            /* https://stackoverflow.com/questions/72234599/how-to-dynamically-resize-image-in-richtextbox-with-event-or-zooming */
+            var image = new System.Windows.Controls.Image();
+            var dlg = new OpenFileDialog
             {
-                var clipboardData = Clipboard.GetDataObject();
-                //BitmapImage bitmapImage = new BitmapImage(new Uri(openFileDialog.FileName, UriKind.Absolute));
-                Uri uri = new Uri(openFileDialog.FileName, UriKind.Absolute);
-                BitmapImage bitmapImage = new BitmapImage();
-                bitmapImage.BeginInit();
-                bitmapImage.UriSource = uri;
+                Filter = "Image Files(*.bmp;*.jpg;*.gif)|*.bmp;*.jpg;*.gif|All files (*.*)|*.* "
+            };
+            if (dlg.ShowDialog() == true)
+            {
+                var imgsrc = new BitmapImage();
+                imgsrc.BeginInit();
+                imgsrc.StreamSource = File.Open(dlg.FileName, FileMode.Open);
+                imgsrc.EndInit();
+                image.Source = imgsrc;
 
-                bitmapImage.DecodePixelHeight = 200;
-                bitmapImage.DecodePixelWidth = 200;
+                image.Height = 200;
+                image.Width = 200;
 
-                bitmapImage.EndInit();
-                Clipboard.SetImage(bitmapImage);
-                rtbEditor.Paste();
-                Clipboard.SetDataObject(clipboardData);
-
+                var para = new Paragraph();
+                para.Inlines.Add(image);
+                rtbEditor.Document.Blocks.Add(para);
             }
         }
 
@@ -175,5 +199,35 @@ namespace BlissEditor
                 MessageBox.Show("Exported: " + filePath);
             }
         }
+
+        //private void Image_Height(object sender, MouseButtonEventArgs e)
+        //{
+        //    if (sender is RichTextBox rtbEditor && !rtbEditor.Selection.IsEmpty)
+        //    {
+        //        foreach (System.Windows.Controls.Image img in rtbEditor.Selection.FindImages())
+        //        {
+        //            img.Height *= 1.25;
+        //        }
+        //    }
+        //}
     }
+
+    //public static class TextRangeExt
+    //{
+    //    public static IList<Image> FindImages(this TextRange range)
+    //    {
+    //        IList<Image> images = new List<Image>();
+    //        for (var position = range.Start;
+    //            position != null && position.CompareTo(range.End) <= 0;
+    //            position = position.GetNextContextPosition(LogicalDirection.Forward))
+    //        {
+    //            if (position.GetPointerContext(LogicalDirection.Forward) == TextPointerContext.ElementStart
+    //                && position.GetAdjacentElement(LogicalDirection.Forward) is InlineUIContainer uic && uic.Child is Image img)
+    //            {
+    //                images.Add(img);
+    //            }
+    //        }
+    //        return images;
+    //    }
+    //}
 }
