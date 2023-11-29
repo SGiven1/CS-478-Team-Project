@@ -1,8 +1,8 @@
-using BlissEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,67 +11,233 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Npgsql;
+using Microsoft.Win32;
+using System.Runtime.InteropServices;
+using System.Windows.Controls.Primitives;
+using QuestPDF.Fluent;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
+using System.Reflection;
+using Image = System.Windows.Controls.Image;
 
 namespace BlissEditor
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RTEWindow : Window
     {
-        private static string HOST = "blisseditorserver.postgres.database.azure.com";
-        private static string PORT = "5432";
-        private static string User = "BlissPG@blisseditorserver";
-        private static string Password = "BlissEditor@";
-        private static string DBName = "blisseditorserver";
-        public MainWindow()
+
+        /* Code below is from https://wpf-tutorial.com/rich-text-controls/how-to-creating-a-rich-text-editor/ */
+        public RTEWindow()
         {
             InitializeComponent();
-            lblIncorrect.Visibility = Visibility.Hidden;
-            txbPasswordShow.Visibility = Visibility.Hidden;
-            string connString = String.Format("Server={0};Username={1};Database={2};Port={3};Password={4};SSLMode=Prefer", HOST, User,DBName,PORT,Password);
-
+            cmbFontFamily.ItemsSource = System.Windows.Media.Fonts.SystemFontFamilies.OrderBy(f => f.Source);
+            cmbFontSize.ItemsSource = new List<double>() { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 };
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void butnClose_Click(object sender, RoutedEventArgs e)
         {
-
+            Application.Current.Shutdown();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void DockPanel_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if ((txbUsername.Text == "admin") && (txbPassword.Password == "1234"))
+            this.DragMove();
+        }
+
+        private void rtbEditor_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            object temp = rtbEditor.Selection.GetPropertyValue(Inline.FontWeightProperty);
+            btnBold.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold));
+            temp = rtbEditor.Selection.GetPropertyValue(Inline.FontStyleProperty);
+            btnItalic.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(FontStyles.Italic));
+            temp = rtbEditor.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
+            btnUnderline.IsChecked = (temp != DependencyProperty.UnsetValue) && (temp.Equals(TextDecorations.Underline));
+
+            temp = rtbEditor.Selection.GetPropertyValue(Inline.FontFamilyProperty);
+            cmbFontFamily.SelectedItem = temp;
+            temp = rtbEditor.Selection.GetPropertyValue(Inline.FontSizeProperty);
+            if (temp.ToString() == "{DependencyProperty.UnsetValue}")
             {
-                /* Code Below from https://stackoverflow.com/questions/21706226/how-to-navigate-between-windows-in-wpf */
-                var newWindow = new RTEWindow(); //create your new form.
-                newWindow.Show(); //show the new form.
-                this.Close(); //only if you want to close the current form.
+                cmbFontSize.Text = " ";
             }
             else
             {
-                lblIncorrect.Visibility = Visibility.Visible;
-                txbPassword.Clear();
+                cmbFontSize.Text = temp.ToString();
+            }
+
+        }
+
+        private void Open_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Rich Text Format (*.rtf)|*.rtf|All files (*.*)|*.*";
+            if (dlg.ShowDialog() == true)
+            {
+                FileStream fileStream = new FileStream(dlg.FileName, FileMode.Open);
+                TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                range.Load(fileStream, DataFormats.Rtf);
             }
         }
 
-        private void txbPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        private void Save_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            txbPasswordShow.Text = txbPassword.Password;
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Filter = "Rich Text Format (*.rtf)|*.rtf|All files (*.*)|*.*";
+            if (dlg.ShowDialog() == true)
+            {
+                FileStream fileStream = new FileStream(dlg.FileName, FileMode.Create);
+                TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                range.Save(fileStream, DataFormats.Rtf);
+            }
         }
 
-        private void btnShow_MouseDown(object sender, MouseButtonEventArgs e)
+        private void cmbFontFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            txbPassword.Visibility = Visibility.Hidden;
-            txbPasswordShow.Visibility= Visibility.Visible;
+            if (cmbFontFamily.SelectedItem != null)
+                rtbEditor.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, cmbFontFamily.SelectedItem);
         }
 
-        private void btnShow_MouseUp(object sender, MouseButtonEventArgs e)
+        private void cmbFontSize_TextChanged(object sender, TextChangedEventArgs e)
         {
-            txbPassword.Visibility = Visibility.Visible;
-            txbPasswordShow.Visibility = Visibility.Hidden;
+            rtbEditor.Selection.ApplyPropertyValue(Inline.FontSizeProperty, cmbFontSize.Text);
         }
+
+        private void Insert_Image(object sender, RoutedEventArgs e)
+        {
+            //OpenFileDialog openFileDialog = new OpenFileDialog();
+            //openFileDialog.Filter = "Builder (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg";
+            //openFileDialog.Multiselect = true;
+
+            //if (openFileDialog.ShowDialog() == true)
+            //{
+            //    var clipboardData = Clipboard.GetDataObject();
+            //    //BitmapImage bitmapImage = new BitmapImage(new Uri(openFileDialog.FileName, UriKind.Absolute));
+            //    Uri uri = new Uri(openFileDialog.FileName, UriKind.Absolute);
+            //    BitmapImage bitmapImage = new BitmapImage();
+            //    bitmapImage.BeginInit();
+            //    bitmapImage.UriSource = uri;
+
+            //    bitmapImage.DecodePixelHeight = 200;
+            //    bitmapImage.DecodePixelWidth = 200;
+
+            //    bitmapImage.EndInit();
+            //    Clipboard.SetImage(bitmapImage);
+            //    rtbEditor.Paste();
+            //    Clipboard.SetDataObject(clipboardData);
+
+            //}
+
+            //Code below and for Image_Height and TextRangeExt class used from:
+            /* https://stackoverflow.com/questions/72234599/how-to-dynamically-resize-image-in-richtextbox-with-event-or-zooming */
+            var image = new System.Windows.Controls.Image();
+            var dlg = new OpenFileDialog
+            {
+                Filter = "Image Files(*.bmp;*.jpg;*.gif)|*.bmp;*.jpg;*.gif|All files (*.*)|*.* "
+            };
+            if (dlg.ShowDialog() == true)
+            {
+                var imgsrc = new BitmapImage();
+                imgsrc.BeginInit();
+                imgsrc.StreamSource = File.Open(dlg.FileName, FileMode.Open);
+                imgsrc.EndInit();
+                image.Source = imgsrc;
+
+                image.Height = 200;
+                image.Width = 200;
+
+                var para = new Paragraph();
+                para.Inlines.Add(image);
+                rtbEditor.Document.Blocks.Add(para);
+            }
+        }
+
+        private void Insert_Table(object sender, RoutedEventArgs e)
+        {
+            rtbEditor.BeginChange();
+            var table = new Table();
+            var gridLenghtConvertor = new GridLengthConverter();
+            table.Columns.Add(new TableColumn());
+            table.Columns.Add(new TableColumn());
+            table.Columns.Add(new TableColumn());
+
+
+            table.RowGroups.Add(new TableRowGroup());
+            for (int i = 0; i < 3; i++)
+            {
+                table.RowGroups[0].Rows.Add(new TableRow());
+                table.RowGroups[0].Rows[i].Cells.Add(new TableCell(new Paragraph(new Run("Row" + (i + 1).ToString() + " Column1"))) /*{ BorderThickness = new Thickness(1), BorderBrush = Brushes.Black }*/);
+                table.RowGroups[0].Rows[i].Cells.Add(new TableCell(new Paragraph(new Run("Row" + (i + 1).ToString() + " Column2"))) /*{ BorderThickness = new Thickness(1), BorderBrush = Brushes.Black }*/);
+                table.RowGroups[0].Rows[i].Cells.Add(new TableCell(new Paragraph(new Run("Row" + (i + 1).ToString() + " Column3"))) /*{ BorderThickness = new Thickness(1), BorderBrush = Brushes.Black }*/);
+            }
+            rtbEditor.Document.Blocks.Add(table);
+            rtbEditor.EndChange();
+            rtbEditor.AppendText("newline");
+        }
+
+        private void Export_PDF(object sender, RoutedEventArgs e)
+        {
+            /* https://github.com/QuestPDF/QuestPDF/blob/97153ad83d36f1174f51d981a5131948661aea4a/Source/QuestPDF.Examples/LicenseSetup.cs#L7 */
+            QuestPDF.Settings.License = LicenseType.Community;
+
+            if (rtbEditor != null)
+            {
+                var document = Document.Create(container =>
+                {
+                    container.Page(page =>
+                    {
+                        page.Size(PageSizes.A4); // may want different options, but defaults to standard A4
+                        page.Margin(2, Unit.Centimetre);
+                        page.DefaultTextStyle(x => x.FontSize(12));
+
+                        page.Content()
+                        .PaddingVertical(1, Unit.Centimetre)
+                        .Column(x =>
+                        {
+                            x.Spacing(20);
+                            TextRange range = new TextRange(rtbEditor.Document.ContentStart, rtbEditor.Document.ContentEnd);
+                            x.Item().Text(range.Text); // only plaintext for right now
+                        });
+                    });
+                });
+
+                var pdfContent = document.GeneratePdf();
+                var filePath = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\BlissExport.pdf";
+                System.IO.File.WriteAllBytes(filePath, pdfContent);
+                MessageBox.Show("Exported: " + filePath);
+            }
+        }
+
+        //private void Image_Height(object sender, MouseButtonEventArgs e)
+        //{
+        //    if (sender is RichTextBox rtbEditor && !rtbEditor.Selection.IsEmpty)
+        //    {
+        //        foreach (System.Windows.Controls.Image img in rtbEditor.Selection.FindImages())
+        //        {
+        //            img.Height *= 1.25;
+        //        }
+        //    }
+        //}
     }
+
+    //public static class TextRangeExt
+    //{
+    //    public static IList<Image> FindImages(this TextRange range)
+    //    {
+    //        IList<Image> images = new List<Image>();
+    //        for (var position = range.Start;
+    //            position != null && position.CompareTo(range.End) <= 0;
+    //            position = position.GetNextContextPosition(LogicalDirection.Forward))
+    //        {
+    //            if (position.GetPointerContext(LogicalDirection.Forward) == TextPointerContext.ElementStart
+    //                && position.GetAdjacentElement(LogicalDirection.Forward) is InlineUIContainer uic && uic.Child is Image img)
+    //            {
+    //                images.Add(img);
+    //            }
+    //        }
+    //        return images;
+    //    }
+    //}
 }
