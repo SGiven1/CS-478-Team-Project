@@ -10,18 +10,59 @@
         <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed" />
         <CommandBinding Command="ApplicationCommands.Save" Executed="Save_Executed" />
     </Window.CommandBindings>
-    <DockPanel>
-		<Menu Width="Auto" Name="mainmenu" VerticalAlignment="Top" DockPanel.Dock="Left" Padding="5 5 5 5 5 5 5 5">
-			<MenuItem Header="Bliss Editor" IsCheckable="false" FontSize="12"/>
-			<MenuItem Header="File" IsCheckable="true" FontSize="12"/>
-			<MenuItem Header="Edit" IsCheckable="true" FontSize="12"/>
-			<MenuItem Header="View" IsCheckable="true" FontSize="12"/>
-			<MenuItem Header="Go" IsCheckable="true" FontSize="12"/>
-			<MenuItem Header="Note" IsCheckable="true" FontSize="12"/>
-			<MenuItem Header="Tools" IsCheckable="true" FontSize="12"/>
-			<MenuItem Header="Help" IsCheckable="true" FontSize="12"/>
-		</Menu>
-        <ToolBar DockPanel.Dock="Top">
+    <DockPanel DockPanel.Dock="Top" Height="32">
+			<DockPanel.Resources>
+				<Style TargetType="{x: Type Popup}">
+					<Setter Property="StaysOpen" Value="False"/>
+					<EventSetter Event="Button.Click" Handler="popup_Click"/>
+				</Style>
+				<Style TargetType="{x:Type Border}">
+					<Setter Property="Background" Value="{StaticResource {x:Static SystemColors.MenuBrushKey}}"/>
+					<Setter Property="BorderThickness" Value="1"/>
+					<Setter Property="Padding" Value="2"/>
+				</Style>
+				<Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+					<Setter Property="HorizontalAlignment" Value="Stretch"/>
+					<Setter Property="HorizontalContentAlignment" Value="Left"/>
+				</Style>
+			</DockPanel.Resources>
+			
+			<ToggleButton Name="btnFile" Click="btnFile_Click">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Margin="2" VerticalAlignment="Center">File</TextBlock>
+				</StackPanel>
+			</ToggleButton>
+			<ToggleButton Name="btnEdit" Click="btnEdit_Click">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Margin="2" VerticalAlignment="Center">Edit</TextBlock>
+				</StackPanel>
+			</ToggleButton>
+			<ToggleButton Name="btnView" Click="btnView_Click">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Margin="2" VerticalAlignment="Center">View</TextBlock>
+				</StackPanel>
+			</ToggleButton>
+			<ToggleButton Name="btnGo" Click="btnGo_Click">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Margin="2" VerticalAlignment="Center">Go</TextBlock>
+				</StackPanel>
+			</ToggleButton>
+			<ToggleButton Name="btnNote" Click="btnNote_Click">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Margin="2" VerticalAlignment="Center">Note</TextBlock>
+				</StackPanel>
+			</ToggleButton>
+			<ToggleButton Name="btnTools" Click="btnTools_Click">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Margin="2" VerticalAlignment="Center">Tools</TextBlock>
+				</StackPanel>
+			</ToggleButton>
+			<ToggleButton Name="btnHelp" Click="btnHelp_Click">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Margin="2" VerticalAlignment="Center">Help</TextBlock>
+				</StackPanel>
+			</ToggleButton>
+			
             <Button Command="ApplicationCommands.Open">
                 <Image Source="/Images/Folder.png" Width="16" Height="16" />
             </Button>
@@ -51,13 +92,7 @@
             <Button x:Name="btnExportPDF" Click="Export_PDF">
                 <Image x:Name="btnExportPDF1" Source="/ExportPDF.png" Width="16" Height="16"/>
             </Button>
-        </ToolBar>
-		<Border HorizontalAlignment="Right" DockPanel.Dock="Right" Padding="5 5 5 5">
-			<StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
-				<Button Content="Close" Width="50" Foreground="White" Background="Transparent"/>
-				<Button Content="Minimize" Width="60" Foreground="White" Backgrount="Transparent"/>
-			</StackPanel>
-		</Border>
+		
         <DockPanel LastChildFill="False" Width="100">
             <Button x:Name="NewNoteBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10">New Note</Button>
             <Button x:Name="AllNotesBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10">All Notes</Button>
