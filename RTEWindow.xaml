@@ -1,0 +1,69 @@
+<Window x:Class="BlissEditor.RTEWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlissEditor"
+        Title="Bliss Editor" Icon="/Images/boplin-icon.png" Height="1000" Width="1200" Background="#272537" ResizeMode="CanResize" WindowStartupLocation="CenterScreen">
+    <!-- General design of code below is from https://wpf-tutorial.com/rich-text-controls/how-to-creating-a-rich-text-editor/ -->
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed" />
+        <CommandBinding Command="ApplicationCommands.Save" Executed="Save_Executed" />
+    </Window.CommandBindings>
+    <DockPanel>
+		<Menu Width="Auto" Name="mainmenu" VerticalAlignment="Top" DockPanel.Dock="Left" Padding="5 5 5 5 5 5 5 5">
+			<MenuItem Header="Bliss Editor" IsCheckable="false" FontSize="12"/>
+			<MenuItem Header="File" IsCheckable="true" FontSize="12"/>
+			<MenuItem Header="Edit" IsCheckable="true" FontSize="12"/>
+			<MenuItem Header="View" IsCheckable="true" FontSize="12"/>
+			<MenuItem Header="Go" IsCheckable="true" FontSize="12"/>
+			<MenuItem Header="Note" IsCheckable="true" FontSize="12"/>
+			<MenuItem Header="Tools" IsCheckable="true" FontSize="12"/>
+			<MenuItem Header="Help" IsCheckable="true" FontSize="12"/>
+		</Menu>
+        <ToolBar DockPanel.Dock="Top">
+            <Button Command="ApplicationCommands.Open">
+                <Image Source="/Images/Folder.png" Width="16" Height="16" />
+            </Button>
+            <Button Command="ApplicationCommands.Save">
+                <Image Source="/Images/Save Disk.png" Width="16" Height="16" />
+            </Button>
+            <Separator />
+            <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold">
+                <Image Source="/Images/Bold.png" Width="16" Height="16" />
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic">
+                <Image Source="/Images/Italics.png" Width="16" Height="16" />
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderline">
+                <Image Source="/Images/Underline.png" Width="16" Height="16" />
+            </ToggleButton>
+            <Separator />
+            <Button Click="Insert_Image">
+                <Image Source="/Images/InsertImage.jpg" Width="16" Height="16" />
+            </Button>
+            <Separator/>
+            <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged"/>
+            <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged"/>
+            <Button Name="btnTable" Click="Insert_Table">
+                <Image x:Name="btnTable1" Source="/Images/Table.png" Width="16" Height="16"/>
+            </Button>
+            <Button x:Name="btnExportPDF" Click="Export_PDF">
+                <Image x:Name="btnExportPDF1" Source="/ExportPDF.png" Width="16" Height="16"/>
+            </Button>
+        </ToolBar>
+		<Border HorizontalAlignment="Right" DockPanel.Dock="Right" Padding="5 5 5 5">
+			<StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+				<Button Content="Close" Width="50" Foreground="White" Background="Transparent"/>
+				<Button Content="Minimize" Width="60" Foreground="White" Backgrount="Transparent"/>
+			</StackPanel>
+		</Border>
+        <DockPanel LastChildFill="False" Width="100">
+            <Button x:Name="NewNoteBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10">New Note</Button>
+            <Button x:Name="AllNotesBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10">All Notes</Button>
+            <Button x:Name="ClassesBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10">Classes</Button>
+            <Button x:Name="ConnectUSIBtn" DockPanel.Dock="Bottom" Height="25">Connect to USI</Button>
+        </DockPanel>
+        <RichTextBox x:Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" VerticalScrollBarVisibility="Auto" Block.LineHeight="2" SpellCheck.IsEnabled="True" RenderTransformOrigin="0.5,0.5" DockPanel.Dock="Right" />
+    </DockPanel>
+</Window>
