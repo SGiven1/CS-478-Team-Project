@@ -24,12 +24,12 @@
                 </Style>
             </PasswordBox.Resources>
         </PasswordBox>
-        <Label x:Name="Title" Content="Bliss Notes Editor" HorizontalAlignment="Center" Margin="0,63,0,0" VerticalAlignment="Top" Height="62" Width="536" FontSize="48" FontFamily="Cascadia Mono SemiBold" Background="Transparent" Foreground="White">
+        <Label x:Name="TitleSU" Content="Bliss Notes Editor" HorizontalAlignment="Center" Margin="0,63,0,0" VerticalAlignment="Top" Height="62" Width="536" FontSize="48" FontFamily="Cascadia Mono SemiBold" Background="Transparent" Foreground="White">
             <Label.Effect>
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <Button x:Name="btnSignUp" Margin="0,234,405,0" Content="Sign Up" FontSize="10" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Width="57" Height="17" VerticalAlignment="Top">
+        <Button x:Name="btnSignUp" Margin="0,234,405,0" Content="Sign Up" FontSize="10" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Width="57" Height="17" VerticalAlignment="Top" Click="btnSignUp_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>

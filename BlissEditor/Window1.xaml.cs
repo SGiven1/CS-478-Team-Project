@@ -24,9 +24,11 @@ namespace BlissEditor
             InitializeComponent();
         }
 
-        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            var newWindow = new MainWindow();
+            newWindow.Show(); 
+            this.Close();
         }
     }
 }

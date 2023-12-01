@@ -100,3 +100,5 @@ C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0
 C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.pdb
 C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.genruntimeconfig.cache
 C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\ref\BlissEditor.dll
+C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\Window1.g.cs
+C:\Users\Owner\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\Window1.baml

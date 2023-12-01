@@ -86,5 +86,12 @@ namespace BlissEditor
             txbPassword.Visibility = Visibility.Visible;
             txbPasswordShow.Visibility = Visibility.Hidden;
         }
+
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new Window1();
+            newWindow.Show();
+            this.Close();
+        }
     }
 }
