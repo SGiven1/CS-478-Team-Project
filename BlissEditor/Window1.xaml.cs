@@ -67,14 +67,14 @@ namespace BlissEditor
                     using (var conn = new NpgsqlConnection(connString))
                     {
                         conn.Open();
-                        using(var command = new NpgsqlCommand("INSERT INTO blisseditorusers (username,password,firstname,lastname) VALUES (@u1, @p1, @f1, @l1)", conn))
+                        using (var command = new NpgsqlCommand("INSERT INTO blisseditorusers (username, password, firstname, lastname) VALUES (@u1, @p1, @f1, @l1)", conn))
                         {
                             command.Parameters.AddWithValue("u1", usernameInput);
                             command.Parameters.AddWithValue("p1", passwordInput);
                             command.Parameters.AddWithValue("f1", firstnameInput);
-                            command.Parameters.AddWithValue("l1",lastnameInput);
+                            command.Parameters.AddWithValue("l1", lastnameInput);
+                            command.ExecuteNonQuery();
                         }
-                        
                     }
                     lblIncorrectSU.Visibility=Visibility.Visible;
                     lblIncorrectSU.Content = "Success";
