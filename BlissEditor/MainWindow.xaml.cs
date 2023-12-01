@@ -26,13 +26,12 @@ namespace BlissEditor
         private static string PORT = "5432";
         private static string User = "BlissPG@blisseditorserver";
         private static string Password = "BlissEditor@";
-        private static string DBName = "blisseditorserver";
+        private static string DBName = "blisseditorDB";
         public MainWindow()
         {
             InitializeComponent();
             lblIncorrect.Visibility = Visibility.Hidden;
             txbPasswordShow.Visibility = Visibility.Hidden;
-            string connString = String.Format("Server={0};Username={1};Database={2};Port={3};Password={4};SSLMode=Prefer", HOST, User,DBName,PORT,Password);
 
         }
 
@@ -43,7 +42,21 @@ namespace BlissEditor
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if ((txbUsername.Text == "admin") && (txbPassword.Password == "1234"))
+            bool dbExists;
+            string usernameInput = txbUsername.Text;
+            string passwordInput = txbPassword.Password;
+            string connString = String.Format("Server={0};Username={1};Database={2};Port={3};Password={4};SSLMode=Prefer", HOST, User, DBName, PORT, Password);
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+                string cmdText = $"SELECT firstname FROM blisseditorusers WHERE username='{usernameInput}' AND password='{passwordInput}'";
+                using (NpgsqlCommand cmd = new NpgsqlCommand(cmdText, conn))
+                {
+                    dbExists = cmd.ExecuteScalar() != null;
+                }
+            }
+
+            if (dbExists)
             {
                 /* Code Below from https://stackoverflow.com/questions/21706226/how-to-navigate-between-windows-in-wpf */
                 var newWindow = new RTEWindow(); //create your new form.
