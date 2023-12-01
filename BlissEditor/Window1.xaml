@@ -12,30 +12,44 @@
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <Label x:Name="lblIncorrectSU" Content="Username is taken" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFFF5353" Height="22" Width="88" FontSize="9" VerticalContentAlignment="Top" FontFamily="Bahnschrift" Margin="0,212,0,0"/>
+        <Label x:Name="lblIncorrectSU" Content="Username is taken" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFFF5353" Height="22" Width="88" FontSize="9" VerticalContentAlignment="Top" FontFamily="Bahnschrift" Margin="0,261,0,0"/>
         <TextBox x:Name="txbPasswordShowSU" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="White" Margin="0,189,0,0" HorizontalAlignment="Center" Visibility="Hidden"/>
-        <Button x:Name="btnConfirm" Margin="0,234,340,0" Content="Confirm" FontSize="10" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Width="57" Height="17" VerticalAlignment="Top">
+        <Button x:Name="btnConfirm" Margin="0,283,340,0" Content="Confirm" FontSize="10" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Width="57" Height="17" VerticalAlignment="Top" Click="btnConfirm_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="btnBack" Margin="0,234,403,0" Content="Back" FontSize="10" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Width="57" Height="17" VerticalAlignment="Top" Click="btnBack_Click">
+        <Button x:Name="btnBack" Margin="0,283,403,0" Content="Back" FontSize="10" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Width="57" Height="17" VerticalAlignment="Top" Click="btnBack_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBox Text="Username" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="White" Margin="0,160,0,0" HorizontalAlignment="Center">
+        <TextBox x:Name="txtUsernameSU" Text="Username" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="White" Margin="0,160,0,0" HorizontalAlignment="Center">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3"/>
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBox Text="Password" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="White" Margin="0,186,0,0" HorizontalAlignment="Center">
+        <TextBox x:Name="txtPasswordSU" Text="Password" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="White" Margin="0,183,0,0" HorizontalAlignment="Center">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="txtFirstNameSU" Text="First Name" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="White" Margin="0,215,0,0" HorizontalAlignment="Center">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="txtLastNameSU" Text="Last Name" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="White" Margin="0,238,0,0" HorizontalAlignment="Center">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3"/>
