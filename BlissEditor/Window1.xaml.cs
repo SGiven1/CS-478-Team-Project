@@ -20,11 +20,11 @@ namespace BlissEditor
     /// </summary>
     public partial class Window1 : Window
     {
-        private static string HOST = "blisseditorserver.postgres.database.azure.com";
-        private static string PORT = "5432";
-        private static string User = "BlissPG@blisseditorserver";
-        private static string Password = "BlissEditor@";
-        private static string DBName = "blisseditorDB";
+        private static string HOST = "";
+        private static string PORT = "";
+        private static string User = "";
+        private static string Password = "";
+        private static string DBName = "";
         public Window1()
         {
             InitializeComponent();
