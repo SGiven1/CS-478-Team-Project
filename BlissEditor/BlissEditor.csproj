@@ -22,6 +22,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="Markdig" Version="0.33.0" />
 	  <PackageReference Include="Npgsql" Version="8.0.0" />
 	  <PackageReference Include="QuestPDF" Version="2023.10.2" />
 	</ItemGroup>

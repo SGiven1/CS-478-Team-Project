@@ -17,13 +17,10 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <PasswordBox x:Name="txbPassword" Margin="0,189,0,0" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1,1,1,1" BorderBrush="White" HorizontalAlignment="Center" Width="120" Height="18" VerticalAlignment="Top" PasswordChanged="txbPassword_PasswordChanged">
-            <PasswordBox.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="3"/>
-                </Style>
-            </PasswordBox.Resources>
-        </PasswordBox>
+        <Border CornerRadius="3" BorderThickness="1" BorderBrush="White" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Height="18" Margin="0,189,0,0">
+            <PasswordBox x:Name="txbPassword" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" PasswordChanged="txbPassword_PasswordChanged"
+                 HorizontalAlignment="Left" Width="120" Height="18" VerticalAlignment="Center" />
+        </Border>
         <Label x:Name="TitleSU" Content="Bliss Notes Editor" HorizontalAlignment="Center" Margin="0,63,0,0" VerticalAlignment="Top" Height="62" Width="536" FontSize="48" FontFamily="Cascadia Mono SemiBold" Background="Transparent" Foreground="White">
             <Label.Effect>
                 <DropShadowEffect/>
@@ -36,14 +33,14 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="btnLogin" Margin="400,234,0,0" Content="Login" HorizontalContentAlignment="Center" FontSize="10" HorizontalAlignment="Left" Width="57" Height="17" VerticalAlignment="Top" Click="Button_Click_1">
+        <Button x:Name="btnLogin" Margin="400,234,0,0" Content="Login" HorizontalContentAlignment="Center" FontSize="10" HorizontalAlignment="Left" Width="57" Height="17" VerticalAlignment="Top" Click="BtnLogin_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Label x:Name="lblGuest" Content="Continue as guest?" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="LightBlue" FontStyle="Italic" Height="22" Width="71" FontSize="7" VerticalContentAlignment="Top" Margin="393,207,0,0"/>
+        <Label x:Name="lblGuest" Content="Continue as guest?" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="LightBlue" FontStyle="Italic" Height="22" Width="71" FontSize="7" VerticalContentAlignment="Top" Margin="393,207,0,0" MouseLeftButtonDown="GuestLoginLbl_Click"/>
         <Label x:Name="lblIncorrect" Content="Username or Password is Incorrect" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFFF5353" Height="22" Width="156" FontSize="9" VerticalContentAlignment="Top" Margin="0,251,0,0" FontFamily="Bahnschrift"/>
         <TextBox x:Name="txbPasswordShow" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="White" Margin="0,189,0,0" HorizontalAlignment="Center" Visibility="Hidden"/>
         <Button x:Name="btnShow" Margin="460,189,0,0" Content="👁" HorizontalContentAlignment="Center" FontSize="10" HorizontalAlignment="Left" Width="18" Height="18" VerticalAlignment="Top" MouseDown="btnShow_MouseDown" MouseUp="btnShow_MouseUp" PreviewMouseUp="btnShow_MouseUp" PreviewMouseDown="btnShow_MouseDown">

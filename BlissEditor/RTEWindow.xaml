@@ -43,11 +43,32 @@
             </Button>
         </ToolBar>
         <DockPanel LastChildFill="False" Width="100">
-            <Button x:Name="NewNoteBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10">New Note</Button>
-            <Button x:Name="AllNotesBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10">All Notes</Button>
-            <Button x:Name="ClassesBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10">Classes</Button>
-            <Button x:Name="ConnectUSIBtn" DockPanel.Dock="Bottom" Height="25">Connect to USI</Button>
+            <Button x:Name="NewRtfNoteBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10" Click="NewRtfNoteBtn_Click">New RTF Note</Button>
+            <Button x:Name="NewMarkdownNoteBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10" Click="NewMdNoteBtn_Click">New MD Note</Button>
+            <Button x:Name="ConnectUSIBtn" DockPanel.Dock="Bottom" Height="25" Margin="7,10,7,10">Connect to USI</Button>
+            <ListBox x:Name="noteList" Width="86" Margin="7,0,7,0" Height="822" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
         </DockPanel>
-        <RichTextBox x:Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" VerticalScrollBarVisibility="Auto" Block.LineHeight="2" SpellCheck.IsEnabled="True" RenderTransformOrigin="0.5,0.5" DockPanel.Dock="Right" />
+        <TabControl x:Name="RTETabControl" Height="Auto" Width="Auto" ItemStringFormat="" Margin="0,10,9,0">
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="RTF Note"/>
+                </TabItem.Header>
+                <RichTextBox x:Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" VerticalScrollBarVisibility="Auto" Block.LineHeight="2" SpellCheck.IsEnabled="True" RenderTransformOrigin="0.5,0.5" DockPanel.Dock="Right" Height="937" />
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Markdown Note"/>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <RichTextBox x:Name="mdTextBox" Grid.Column="0"  Margin="5" Block.LineHeight="2" TextChanged="TextBox_TextChanged"/>
+                    <WebBrowser x:Name="webBrowser"  Grid.Column="1" Margin="5"/>
+                    <GridSplitter HorizontalAlignment="Center" Height="Auto" VerticalAlignment="Top" Width="5" Panel.ZIndex="-15"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </DockPanel>
 </Window>

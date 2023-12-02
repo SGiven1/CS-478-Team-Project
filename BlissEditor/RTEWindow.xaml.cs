@@ -20,6 +20,9 @@ using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using System.Reflection;
 using Image = System.Windows.Controls.Image;
+using System.Net;
+using System.Windows.Controls.Primitives;
+
 
 namespace BlissEditor
 {
@@ -28,7 +31,6 @@ namespace BlissEditor
     /// </summary>
     public partial class RTEWindow : Window
     {
-
         /* Code below is from https://wpf-tutorial.com/rich-text-controls/how-to-creating-a-rich-text-editor/ */
         public RTEWindow()
         {
@@ -197,6 +199,76 @@ namespace BlissEditor
                 var filePath = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\BlissExport.pdf";
                 System.IO.File.WriteAllBytes(filePath, pdfContent);
                 MessageBox.Show("Exported: " + filePath);
+            }
+        }
+
+        private void NewRtfNoteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            // Create new tab item
+            TabItem newNoteTab = new TabItem();
+            // Create RichText box
+            RichTextBox richTextBox = new RichTextBox();
+
+            // Name tab and set content
+            newNoteTab.Header = "New RTF Note";
+            newNoteTab.Content = richTextBox;
+
+            // Add the new TabItem to the TabControl
+            RTETabControl.Items.Add(newNoteTab);
+        }
+
+        private void NewMdNoteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            // Create a new TabItem
+            TabItem newMdNoteTab = new TabItem();
+
+            // Create a Grid to contain RichTextBox and WebBrowser
+            Grid grid = new Grid();
+            grid.ColumnDefinitions.Add(new ColumnDefinition());
+            grid.ColumnDefinitions.Add(new ColumnDefinition());
+
+            // Create a RichTextBox for Markdown editing
+            RichTextBox mdRichTextBox = new RichTextBox();
+            mdRichTextBox.TextChanged += TextBox_TextChanged;
+
+            // Create a WebBrowser for rendering HTML
+            WebBrowser mdWebBrowser = new WebBrowser();
+
+            // Add the RichTextBox and WebBrowser to the Grid
+            Grid.SetColumn(mdRichTextBox, 0);
+            Grid.SetColumn(mdWebBrowser, 1);
+            grid.Children.Add(mdRichTextBox);
+            grid.Children.Add(mdWebBrowser);
+
+            // Set the content and header of the TabItem
+            newMdNoteTab.Header = "New Markdown Note";
+            newMdNoteTab.Content = grid;
+
+            // Add the new TabItem to the TabControl
+            RTETabControl.Items.Add(newMdNoteTab);
+        }
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // Handle Markdown text changed event
+            RichTextBox mdRichTextBox = (RichTextBox)sender;
+
+            // Get the Markdown content
+            var md = new TextRange(mdRichTextBox.Document.ContentStart, mdRichTextBox.Document.ContentEnd).Text;
+
+            // Convert Markdown to HTML and display it in the WebBrowser
+            var html = Markdig.Markdown.ToHtml(md);
+            try
+            {
+                // Assume every element is properly set and exists
+                if (mdRichTextBox.Parent is Grid grid && grid.Children.Count > 1 && grid.Children[1] is WebBrowser webBrowser)
+                {
+                    webBrowser.NavigateToString(html);
+                }
+            }
+            // Add boilerplate if nothing is in richtext box
+            catch (System.ArgumentNullException)
+            {
+                webBrowser.NavigateToString("<html><body></body></html>");
             }
         }
 

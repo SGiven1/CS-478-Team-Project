@@ -20,11 +20,11 @@ namespace BlissEditor
     /// </summary>
     public partial class Window1 : Window
     {
-        private static string HOST = "";
-        private static string PORT = "";
-        private static string User = "";
-        private static string Password = "";
-        private static string DBName = "";
+        private static string HOST = "blisseditorserver.postgres.database.azure.com";
+        private static string PORT = "5432";
+        private static string User = "BlissPG@blisseditorserver";
+        private static string Password = "BlissEditorNix@";
+        private static string DBName = "blisseditorDB";
         public Window1()
         {
             InitializeComponent();
@@ -48,6 +48,7 @@ namespace BlissEditor
             string connString = String.Format("Server={0};Username={1};Database={2};Port={3};Password={4};SSLMode=Prefer", HOST, User, DBName, PORT, Password);
             using (var conn = new NpgsqlConnection(connString))
             {
+                /* We need to handle exceptions here as well. */
                 conn.Open();
                 string cmdText = $"SELECT firstname FROM blisseditorusers WHERE username='{usernameInput}'";
                 using (NpgsqlCommand cmd = new NpgsqlCommand(cmdText, conn))
