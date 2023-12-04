@@ -242,3 +242,27 @@ C:\Users\sgiven\Downloads\CS-478-Team-Project-main (4)\CS-478-Team-Project-main\
 C:\Users\sgiven\Downloads\CS-478-Team-Project-main (4)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.pdb
 C:\Users\sgiven\Downloads\CS-478-Team-Project-main (4)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.genruntimeconfig.cache
 C:\Users\sgiven\Downloads\CS-478-Team-Project-main (4)\CS-478-Team-Project-main\BlissEditor\obj\Debug\net6.0-windows\ref\BlissEditor.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\HarfBuzzSharp.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\Markdig.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\Npgsql.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\QuestPDF.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\SkiaSharp.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\SkiaSharp.HarfBuzz.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\runtimes\osx\native\libHarfBuzzSharp.dylib
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\runtimes\win-x64\native\libHarfBuzzSharp.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\runtimes\win-x86\native\libHarfBuzzSharp.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.csproj.AssemblyReference.cache
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\Window1.g.cs
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\Window1.baml
+C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\obj\Debug\net6.0-windows\BlissEditor.csproj.CopyComplete

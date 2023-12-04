@@ -51,16 +51,9 @@ namespace BlissEditor
             temp = rtbEditor.Selection.GetPropertyValue(Inline.FontFamilyProperty);
             cmbFontFamily.SelectedItem = temp;
             temp = rtbEditor.Selection.GetPropertyValue(Inline.FontSizeProperty);
+            cmbFontSize.SelectedItem = temp;
             temp = rtbEditor.Selection.GetPropertyValue(TextElement.FontStyleProperty);
             cmbFontColor.SelectedItem = temp;
-            if (temp.ToString() == "{DependencyProperty.UnsetValue}")
-            {
-                cmbFontSize.Text = " ";
-            }
-            else
-            {
-                cmbFontSize.Text = temp.ToString();
-            }
 
         }
 
@@ -279,6 +272,14 @@ namespace BlissEditor
             catch (System.ArgumentNullException)
             {
                 webBrowser.NavigateToString("<html><body></body></html>");
+            }
+        }
+
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                Close();
             }
         }
 
