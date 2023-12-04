@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j9IZjcBLOiuVQFBNQO98q3v2HcdaZejV09pUL1KMzH+mn1go2YfU2OPcE0kJJCk5NjUwAMcX6t5BVuxJUZk+kA==",
+  "dgSpecHash": "zG0emLOvn7xTGtEL90njED7lisvsw3agXG8cjOPOafW/Q6tBX7mXGhaXgqPRhK46zTWoy5vd1cfKPdILntnm6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sgiven\\Downloads\\CS-478-Team-Project-main (3)\\CS-478-Team-Project-main\\BlissEditor\\BlissEditor.csproj",
+  "projectFilePath": "C:\\Users\\sgiven\\Downloads\\CS-478-Team-Project-main (4)\\CS-478-Team-Project-main\\BlissEditor\\BlissEditor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sgiven\\.nuget\\packages\\harfbuzzsharp\\7.3.0\\harfbuzzsharp.7.3.0.nupkg.sha512",
     "C:\\Users\\sgiven\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\7.3.0\\harfbuzzsharp.nativeassets.macos.7.3.0.nupkg.sha512",

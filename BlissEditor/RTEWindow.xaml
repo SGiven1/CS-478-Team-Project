@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BlissEditor"
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-        Title="Bliss Editor" Icon="/Images/boplin-icon.png" Height="1000" Width="1200" Background="Transparent" ResizeMode="CanResize" WindowStartupLocation="CenterScreen">
+        Title="Bliss Editor" Icon="/Images/boplin-icon.png" Height="1000" Width="1200" WindowStyle ="None" Background="Transparent" ResizeMode="CanResize" WindowStartupLocation="CenterScreen">
     <!-- General design of code below is from https://wpf-tutorial.com/rich-text-controls/how-to-creating-a-rich-text-editor/ -->
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed" />
