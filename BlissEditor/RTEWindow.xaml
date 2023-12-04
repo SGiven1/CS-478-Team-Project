@@ -4,14 +4,88 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BlissEditor"
-        Title="Bliss Editor" Icon="/Images/boplin-icon.png" Height="1000" Width="1200" Background="#272537" ResizeMode="CanResize" WindowStartupLocation="CenterScreen">
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        Title="Bliss Editor" Icon="/Images/boplin-icon.png" Height="1000" Width="1200" Background="Transparent" ResizeMode="CanResize" WindowStartupLocation="CenterScreen">
     <!-- General design of code below is from https://wpf-tutorial.com/rich-text-controls/how-to-creating-a-rich-text-editor/ -->
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed" />
         <CommandBinding Command="ApplicationCommands.Save" Executed="Save_Executed" />
     </Window.CommandBindings>
-    <DockPanel>
-        <ToolBar DockPanel.Dock="Top">
+    <Window.Resources>
+        <SolidColorBrush x:Key="AliceBlue" Color="AliceBlue"/>
+        <SolidColorBrush x:Key="AntiqueWhite" Color="AntiqueWhite"/>
+        <SolidColorBrush x:Key="Aqua" Color="Aqua"/>
+        <SolidColorBrush x:Key="Black" Color="Black"/>
+        <SolidColorBrush x:Key="DarkGray" Color="DarkGray"/>
+        <SolidColorBrush x:Key="DarkMagenta" Color="DarkMagenta"/>
+        <SolidColorBrush x:Key="DarkGreen" Color="DarkGreen"/>
+        <SolidColorBrush x:Key="Goldenrod" Color="Goldenrod"/>
+        <SolidColorBrush x:Key="Pink" Color="Pink"/>
+        <SolidColorBrush x:Key="BlueViolet" Color="BlueViolet"/>
+        <SolidColorBrush x:Key="Coral" Color="Coral"/>
+        <SolidColorBrush x:Key="Chartreuse" Color="Chartreuse"/>
+        <SolidColorBrush x:Key="Lavender" Color="Lavender"/>
+        <SolidColorBrush x:Key="LavenderBlush" Color="LavenderBlush"/>
+        <SolidColorBrush x:Key="Firebrick" Color="Firebrick"/>
+        <SolidColorBrush x:Key="Maroon" Color="Maroon"/>
+        <SolidColorBrush x:Key="Orchid" Color="Orchid"/>
+        <SolidColorBrush x:Key="ForestGreen" Color="ForestGreen"/>
+        <SolidColorBrush x:Key="Moccasin" Color="Moccasin"/>
+        <SolidColorBrush x:Key="LightGreen" Color="LightGreen"/>
+        <SolidColorBrush x:Key="MediumSeaGreen" Color="MediumSeaGreen"/>
+        <SolidColorBrush x:Key="MidnightBlue" Color="MidnightBlue"/>
+        <SolidColorBrush x:Key="DodgerBlue" Color="DodgerBlue"/>
+        <SolidColorBrush x:Key="LemonChiffon" Color="LemonChiffon"/>
+        <SolidColorBrush x:Key="Honeydew" Color="Honeydew"/>
+        <SolidColorBrush x:Key="LightSlateGray" Color="LightSlateGray"/>
+        <SolidColorBrush x:Key="DimGray" Color="DimGray"/>
+        <SolidColorBrush x:Key="MistyRose" Color="MistyRose"/>
+        <SolidColorBrush x:Key="MintCream" Color="MintCream"/>
+        <SolidColorBrush x:Key="Beige" Color="Beige"/>
+        <SolidColorBrush x:Key="HotPink" Color="HotPink"/>
+        <SolidColorBrush x:Key="DarkKhaki" Color="DarkKhaki"/>
+        <SolidColorBrush x:Key="BurlyWood" Color="BurlyWood"/>
+        <SolidColorBrush x:Key="Orange" Color="Orange"/>
+        <SolidColorBrush x:Key="Purple" Color="Purple"/>
+    </Window.Resources>
+    <DockPanel Background="#FF8E927E">
+        <ToolBar DockPanel.Dock="Top" Background="#FF8E927E">
+            <!--<ToggleButton Name="btnFile" Click="btnFile_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="2" VerticalAlignment="Center">File</TextBlock>
+                </StackPanel>
+            </ToggleButton>
+            <ToggleButton Name="btnEdit" Click="btnEdit_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="2" VerticalAlignment="Center">Edit</TextBlock>
+                </StackPanel>
+            </ToggleButton>
+            <ToggleButton Name="btnView" Click="btnView_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="2" VerticalAlignment="Center">View</TextBlock>
+                </StackPanel>
+            </ToggleButton>
+            <ToggleButton Name="btnGo" Click="btnGo_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="2" VerticalAlignment="Center">Go</TextBlock>
+                </StackPanel>
+            </ToggleButton>
+            <ToggleButton Name="btnNote" Click="btnNote_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="2" VerticalAlignment="Center">Note</TextBlock>
+                </StackPanel>
+            </ToggleButton>
+            <ToggleButton Name="btnTools" Click="btnTools_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="2" VerticalAlignment="Center">Tools</TextBlock>
+                </StackPanel>
+            </ToggleButton>
+            <ToggleButton Name="btnHelp" Click="btnHelp_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="2" VerticalAlignment="Center">Help</TextBlock>
+                </StackPanel>
+            </ToggleButton>-->
+
             <Button Command="ApplicationCommands.Open">
                 <Image Source="/Images/Folder.png" Width="16" Height="16" />
             </Button>
@@ -35,6 +109,52 @@
             <Separator/>
             <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged"/>
             <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged"/>
+            <ComboBox x:Name="cmbFontColor" Width="100" SelectionChanged="cmbFontColor_SelectionChanged" Margin="0 0 5 0">
+                <ComboBox.Style>
+                    <Style TargetType="ComboBox">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path}" Value="True">
+                                <Setter Property="Background" Value="{StaticResource Black}"/>
+                                <Setter Property="Background" Value="{StaticResource AliceBlue}"/>
+                                <Setter Property="Foreground" Value="{StaticResource AntiqueWhite}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Aqua}"/>
+                                <Setter Property="Foreground" Value="{StaticResource DarkGray}"/>
+                                <Setter Property="Foreground" Value="{StaticResource DarkMagenta}"/>
+                                <Setter Property="Foreground" Value="{StaticResource DarkGreen}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Goldenrod}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Pink}"/>
+                                <Setter Property="Foreground" Value="{StaticResource BlueViolet}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Coral}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Chartreuse}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Lavender}"/>
+                                <Setter Property="Foreground" Value="{StaticResource LavenderBlush}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Firebrick}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Maroon}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Orchid}"/>
+                                <Setter Property="Foreground" Value="{StaticResource ForestGreen}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Moccasin}"/>
+                                <Setter Property="Foreground" Value="{StaticResource LightGreen}"/>
+                                <Setter Property="Foreground" Value="{StaticResource MediumSeaGreen}"/>
+                                <Setter Property="Foreground" Value="{StaticResource MidnightBlue}"/>
+                                <Setter Property="Foreground" Value="{StaticResource DodgerBlue}"/>
+                                <Setter Property="Foreground" Value="{StaticResource LemonChiffon}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Honeydew}"/>
+                                <Setter Property="Foreground" Value="{StaticResource LightSlateGray}"/>
+                                <Setter Property="Foreground" Value="{StaticResource DimGray}"/>
+                                <Setter Property="Foreground" Value="{StaticResource MistyRose}"/>
+                                <Setter Property="Foreground" Value="{StaticResource MintCream}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Beige}"/>
+                                <Setter Property="Foreground" Value="{StaticResource HotPink}"/>
+                                <Setter Property="Foreground" Value="{StaticResource DarkKhaki}"/>
+                                <Setter Property="Foreground" Value="{StaticResource BurlyWood}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Orange}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Purple}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ComboBox.Style>
+            </ComboBox>
+
             <Button Name="btnTable" Click="Insert_Table">
                 <Image x:Name="btnTable1" Source="/Images/Table.png" Width="16" Height="16"/>
             </Button>
@@ -42,18 +162,71 @@
                 <Image x:Name="btnExportPDF1" Source="/ExportPDF.png" Width="16" Height="16"/>
             </Button>
         </ToolBar>
-        <DockPanel LastChildFill="False" Width="100">
-            <Button x:Name="NewRtfNoteBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10" Click="NewRtfNoteBtn_Click">New RTF Note</Button>
-            <Button x:Name="NewMarkdownNoteBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10" Click="NewMdNoteBtn_Click">New MD Note</Button>
-            <Button x:Name="ConnectUSIBtn" DockPanel.Dock="Bottom" Height="25" Margin="7,10,7,10">Connect to USI</Button>
-            <ListBox x:Name="noteList" Width="86" Margin="7,0,7,0" Height="822" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
+        <Border CornerRadius="10 10 10 10" Width="100" Height="80" VerticalAlignment="Top" Margin="10 0 10 0">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#FFA3A59A" Offset="0"/>
+                    <GradientStop Color="#FFC9D2B2" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <TextBlock Text="MG" Foreground="#ffffff" FontSize="22" FontWeight="SemiBold" TextAlignment="Center" VerticalAlignment="Center" Margin="3 0 0 2" InputScope="LogOnName"/>
+        </Border>
+        
+        <DockPanel LastChildFill="False" Width="100" Background="#FF8E927E">
+            <Border CornerRadius="10 10 10 10" Width="100" Height="40" VerticalAlignment="Top">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#FFA3A59A" Offset="0"/>
+                        <GradientStop Color="#FFC9D2B2" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Button x:Name="NewRtfNoteBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10" Click="NewRtfNoteBtn_Click" Background="Transparent" FontWeight="SemiBold" Foreground="White" BorderBrush="Transparent">New RTF Note</Button>
+            </Border>
+
+            <Border CornerRadius="10 10 10 10" Width="100" Height="40" VerticalAlignment="Top" Margin="-100 50 0 0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#FFA3A59A" Offset="0"/>
+                        <GradientStop Color="#FFC9D2B2" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Button x:Name="NewMarkdownNoteBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10" Click="NewMdNoteBtn_Click" Background="Transparent" FontWeight="SemiBold" Foreground="White" BorderBrush="Transparent">New MD Note</Button>
+            </Border>
+
+            <Border CornerRadius="10 10 10 10" Width="100" Height="40" VerticalAlignment="Top" Margin="-100 900 0 0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#FFA3A59A" Offset="0"/>
+                        <GradientStop Color="#FFC9D2B2" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Button x:Name="ConnectUSIBtn" DockPanel.Dock="Bottom" Height="25" Margin="7,10,7,10" Background="Transparent" FontWeight="SemiBold" Foreground="White" BorderBrush="Transparent">Connect to USI</Button>
+            </Border>
+
+            <ListBox x:Name="noteList" Width="86" Margin="7,0,7,0" Height="822" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="#FF8E927E" Foreground="White"/>
+        </DockPanel>
+        
+        <DockPanel>
+            <ToolBar DockPanel.Dock="Left" Width="2">
+                <GridSplitter Height="100" Width="6"/>
+                <GridSplitter HorizontalAlignment="Center" Height="Auto" VerticalAlignment="Top" Width="5" Panel.ZIndex="-15"/>
+            </ToolBar>
         </DockPanel>
         <TabControl x:Name="RTETabControl" Height="Auto" Width="Auto" ItemStringFormat="" Margin="0,10,9,0">
             <TabItem>
                 <TabItem.Header>
                     <TextBlock Text="RTF Note"/>
                 </TabItem.Header>
-                <RichTextBox x:Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" VerticalScrollBarVisibility="Auto" Block.LineHeight="2" SpellCheck.IsEnabled="True" RenderTransformOrigin="0.5,0.5" DockPanel.Dock="Right" Height="937" />
+                <RichTextBox x:Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" VerticalScrollBarVisibility="Auto" Block.LineHeight="2" SpellCheck.IsEnabled="True" RenderTransformOrigin="0.5,0.5" DockPanel.Dock="Right" Height="937" >
+                    <RichTextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.16"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </RichTextBox.RenderTransform>
+                </RichTextBox>
             </TabItem>
             <TabItem>
                 <TabItem.Header>
@@ -66,9 +239,17 @@
                     </Grid.ColumnDefinitions>
                     <RichTextBox x:Name="mdTextBox" Grid.Column="0"  Margin="5" Block.LineHeight="2" TextChanged="TextBox_TextChanged"/>
                     <WebBrowser x:Name="webBrowser"  Grid.Column="1" Margin="5"/>
-                    <GridSplitter HorizontalAlignment="Center" Height="Auto" VerticalAlignment="Top" Width="5" Panel.ZIndex="-15"/>
                 </Grid>
             </TabItem>
         </TabControl>
+        <Border CornerRadius="0 10 0 10" Width="100">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#FFA3A59A" Offset="0"/>
+                    <GradientStop Color="#FFC9D2B2" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <TextBlock Text="MG" Foreground="#ffffff" FontSize="22" FontWeight="SemiBold" TextAlignment="Center" VerticalAlignment="Center" Margin="3 0 0 2"/>
+        </Border>
     </DockPanel>
 </Window>

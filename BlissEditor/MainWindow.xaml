@@ -8,48 +8,85 @@
         Title="MainWindow" Height="450" Width="800"
         WindowStyle="SingleBorderWindow"
         ResizeMode="NoResize"
-        Background="#272537" WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <!-- Background="#272537"-->
     <Grid Margin="0,0,0,-6">
-        <TextBox x:Name="txbUsername" Text="Username" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="White" Margin="0,160,0,0" HorizontalAlignment="Center">
-            <TextBox.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="3"/>
-                </Style>
-            </TextBox.Resources>
-        </TextBox>
-        <Border CornerRadius="3" BorderThickness="1" BorderBrush="White" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Height="18" Margin="0,189,0,0">
-            <PasswordBox x:Name="txbPassword" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" PasswordChanged="txbPassword_PasswordChanged"
-                 HorizontalAlignment="Left" Width="120" Height="18" VerticalAlignment="Center" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/Background.jpg" AlignmentY="Top" AlignmentX="Center" Opacity="0.7"/>
+        </Grid.Background>
+        <Border Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <StackPanel>
+                <Label x:Name="TitleSU" Content="Bliss Notes Editor" Margin="135,55,0,0" Height="62" Width="536" FontSize="48" FontFamily="Georgia" Foreground="White" BorderBrush="Transparent">
+                    <!--<Label.Background Margin="0 0 0 0">
+                            <ImageBrush Stretch="Fill" ImageSource="/BEditor.png" AlignmentY="Top" AlignmentX="Right"/>
+                        </Label.Background>-->
+                </Label>
+            </StackPanel>
         </Border>
-        <Label x:Name="TitleSU" Content="Bliss Notes Editor" HorizontalAlignment="Center" Margin="0,63,0,0" VerticalAlignment="Top" Height="62" Width="536" FontSize="48" FontFamily="Cascadia Mono SemiBold" Background="Transparent" Foreground="White">
-            <Label.Effect>
-                <DropShadowEffect/>
-            </Label.Effect>
-        </Label>
-        <Button x:Name="btnSignUp" Margin="0,234,405,0" Content="Sign Up" FontSize="10" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Width="57" Height="17" VerticalAlignment="Top" Click="btnSignUp_Click">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button x:Name="btnLogin" Margin="400,234,0,0" Content="Login" HorizontalContentAlignment="Center" FontSize="10" HorizontalAlignment="Left" Width="57" Height="17" VerticalAlignment="Top" Click="BtnLogin_Click">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Label x:Name="lblGuest" Content="Continue as guest?" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="LightBlue" FontStyle="Italic" Height="22" Width="71" FontSize="7" VerticalContentAlignment="Top" Margin="393,207,0,0" MouseLeftButtonDown="GuestLoginLbl_Click"/>
-        <Label x:Name="lblIncorrect" Content="Username or Password is Incorrect" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFFF5353" Height="22" Width="156" FontSize="9" VerticalContentAlignment="Top" Margin="0,251,0,0" FontFamily="Bahnschrift"/>
-        <TextBox x:Name="txbPasswordShow" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="White" Margin="0,189,0,0" HorizontalAlignment="Center" Visibility="Hidden"/>
-        <Button x:Name="btnShow" Margin="460,189,0,0" Content="👁" HorizontalContentAlignment="Center" FontSize="10" HorizontalAlignment="Left" Width="18" Height="18" VerticalAlignment="Top" MouseDown="btnShow_MouseDown" MouseUp="btnShow_MouseUp" PreviewMouseUp="btnShow_MouseUp" PreviewMouseDown="btnShow_MouseDown">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
+        <Border Grid.Row="2" Grid.Column="2" CornerRadius="20" Margin="20">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.75,0" EndPoint="0,1">
+                    <GradientStop  Color="#FF886A6A" Offset="0.1"/>
+                    <GradientStop Color="#FFE0B7B7" Offset="0.8"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Border Background="#FFFFFF" Height="150" Width="180" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20" Opacity="0.3" Margin="5,5,5,5"/>
+
+                <TextBox x:Name="txbUsername" Text="Username" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="#FFF3EFD6" Margin="0,70,0,0" HorizontalAlignment="Center">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <Border CornerRadius="3" BorderThickness="1" BorderBrush="White" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Height="18" Margin="0,95,0,0">
+                    <PasswordBox x:Name="txbPassword" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderBrush="#FFF3EFD6" PasswordChanged="txbPassword_PasswordChanged"
+                    HorizontalAlignment="Left" Width="120" Height="18" VerticalAlignment="Center" />
+                </Border>
+                <Button x:Name="btnSignUp" Margin="0,120,80,0" Content="Sign Up" FontSize="10" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Width="57" Height="17" VerticalAlignment="Top" Click="btnSignUp_Click" Foreground="White" Background="Transparent" BorderBrush="#FFF3EFD6">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                             <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                 </Button>
+                <Button x:Name="btnLogin" Margin="73,145,0,0" Content="Login" HorizontalContentAlignment="Center" FontSize="10" HorizontalAlignment="Left" Width="57" Height="17" VerticalAlignment="Top" Click="BtnLogin_Click" Foreground="White" Background="Transparent" BorderBrush="#FFF3EFD6">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Label x:Name="lblGuest" Content="Continue as guest?" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" FontStyle="Italic" FontWeight="DemiBold" Height="22" Width="71" FontSize="7" VerticalContentAlignment="Top" Margin="70,160,0,0" MouseLeftButtonDown="GuestLoginLbl_Click"/>
+                <Label x:Name="lblIncorrect" Content="Forgot Password? Reset" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black" Height="22" Width="156" FontSize="9" VerticalContentAlignment="Top" Margin="45,185,0,0" FontFamily="Bahnschrift"/>
+                <TextBox x:Name="txbPasswordShow" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="#FFF3EFD6" Margin="0,100,0,0" HorizontalAlignment="Center" Visibility="Hidden"/>
+                <Button x:Name="btnShow" Margin="170,95,0,0" Content="👁" HorizontalContentAlignment="Center" FontSize="10" HorizontalAlignment="Left" Width="18" Height="18" VerticalAlignment="Top" MouseDown="btnShow_MouseDown" MouseUp="btnShow_MouseUp" PreviewMouseUp="btnShow_MouseUp" PreviewMouseDown="btnShow_MouseDown" RenderTransformOrigin="-15.056,-0.164">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+            </Grid>
+        </Border>
 
     </Grid>
 </Window>
