@@ -73,7 +73,7 @@
             <Separator/>
             <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged"/>
             <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged" Height="20"/>
-            <ComboBox x:Name="cmbFontColor" Width="100" SelectionChanged="cmbFontColor_SelectionChanged" Margin="0 0 5 0">
+            <ComboBox x:Name="cmbFontColor" Width="95" SelectionChanged="cmbFontColor_SelectionChanged">
                 <ComboBox.Style>
                     <Style TargetType="ComboBox">
                         <Style.Triggers>
@@ -160,15 +160,7 @@
                 <TabItem.Header>
                     <TextBlock Text="RTF Note"/>
                 </TabItem.Header>
-                <RichTextBox x:Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" VerticalScrollBarVisibility="Auto" Block.LineHeight="2" SpellCheck.IsEnabled="True" RenderTransformOrigin="0.5,0.5" DockPanel.Dock="Right" Width="Auto" Margin="2,2,2,2">
-                    <RichTextBox.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="0.16"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </RichTextBox.RenderTransform>
+                <RichTextBox x:Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" VerticalScrollBarVisibility="Auto" Block.LineHeight="2" SpellCheck.IsEnabled="True" RenderTransformOrigin="0.5,0.5" DockPanel.Dock="Right" Width="Auto" Margin="0,0,2,0" Height="690">
                 </RichTextBox>
             </TabItem>
             <TabItem>
@@ -185,17 +177,10 @@
                         <ColumnDefinition Width="503*"/>
                         <ColumnDefinition Width="542*"/>
                     </Grid.ColumnDefinitions>
-                    <RichTextBox x:Name="mdTextBox" Grid.Column="0"  Margin="2,2,6,2" Block.LineHeight="2" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <RichTextBox x:Name="mdTextBox" Grid.Column="0"  Margin="0,0,6,2" Block.LineHeight="2" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
                     <WebBrowser x:Name="webBrowser"  Grid.Column="2" Margin="4,5,5,5" Grid.RowSpan="2"/>
                 </Grid>
             </TabItem>
         </TabControl>
     </DockPanel>
 </Window>
-    
-    
-    
-    
-    
-    
-
