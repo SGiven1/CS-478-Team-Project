@@ -96,7 +96,7 @@ namespace BlissEditor
 
         private void btnSignUp_Click(object sender, RoutedEventArgs e)
         {
-            var newWindow = new Window1();
+            var newWindow = new SignupWindow();
             newWindow.Show();
             this.Close();
         }

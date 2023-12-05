@@ -9,7 +9,6 @@
 
 	<ItemGroup>
 	  <None Remove="Background.jpg" />
-	  <None Remove="ExportPDF.png" />
 	  <None Remove="Images\Bold.png" />
 	  <None Remove="Images\boplin-icon.png" />
 	  <None Remove="Images\Folder.png" />
@@ -29,8 +28,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Resource Include="Background.jpg" />
-	  <Resource Include="ExportPDF.png" />
+	  <Resource Include="Images\Background.jpg" />
 	  <Resource Include="Images\Bold.png" />
 	  <Resource Include="Images\boplin-icon.png" />
 	  <Resource Include="Images\Folder.png" />

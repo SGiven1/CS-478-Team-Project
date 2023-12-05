@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BlissEditor"
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-        Title="Bliss Editor" Icon="/Images/boplin-icon.png" Height="1000" Width="1200" WindowStyle ="None" Background="Transparent" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" KeyUp="Window_KeyUp">
+        Title="Bliss Editor" Icon="/Images/boplin-icon.png" Height="800" Width="1200" Background="Transparent" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" KeyUp="Window_KeyUp">
     <!-- General design of code below is from https://wpf-tutorial.com/rich-text-controls/how-to-creating-a-rich-text-editor/ -->
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed" />
@@ -48,44 +48,8 @@
         <SolidColorBrush x:Key="Orange" Color="Orange"/>
         <SolidColorBrush x:Key="Purple" Color="Purple"/>
     </Window.Resources>
-    <DockPanel Background="#FF8E927E">
-        <ToolBar DockPanel.Dock="Top" Background="#FF8E927E">
-            <!--<ToggleButton Name="btnFile" Click="btnFile_Click">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="2" VerticalAlignment="Center">File</TextBlock>
-                </StackPanel>
-            </ToggleButton>
-            <ToggleButton Name="btnEdit" Click="btnEdit_Click">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="2" VerticalAlignment="Center">Edit</TextBlock>
-                </StackPanel>
-            </ToggleButton>
-            <ToggleButton Name="btnView" Click="btnView_Click">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="2" VerticalAlignment="Center">View</TextBlock>
-                </StackPanel>
-            </ToggleButton>
-            <ToggleButton Name="btnGo" Click="btnGo_Click">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="2" VerticalAlignment="Center">Go</TextBlock>
-                </StackPanel>
-            </ToggleButton>
-            <ToggleButton Name="btnNote" Click="btnNote_Click">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="2" VerticalAlignment="Center">Note</TextBlock>
-                </StackPanel>
-            </ToggleButton>
-            <ToggleButton Name="btnTools" Click="btnTools_Click">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="2" VerticalAlignment="Center">Tools</TextBlock>
-                </StackPanel>
-            </ToggleButton>
-            <ToggleButton Name="btnHelp" Click="btnHelp_Click">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="2" VerticalAlignment="Center">Help</TextBlock>
-                </StackPanel>
-            </ToggleButton>-->
-
+    <DockPanel Background="#FF531167">
+        <ToolBar DockPanel.Dock="Top" Background="#FF531167">
             <Button Command="ApplicationCommands.Open">
                 <Image Source="/Images/Folder.png" Width="16" Height="16" />
             </Button>
@@ -108,7 +72,7 @@
             </Button>
             <Separator/>
             <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged"/>
-            <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged"/>
+            <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged" Height="20"/>
             <ComboBox x:Name="cmbFontColor" Width="100" SelectionChanged="cmbFontColor_SelectionChanged" Margin="0 0 5 0">
                 <ComboBox.Style>
                     <Style TargetType="ComboBox">
@@ -159,65 +123,44 @@
                 <Image x:Name="btnTable1" Source="/Images/Table.png" Width="16" Height="16"/>
             </Button>
             <Button x:Name="btnExportPDF" Click="Export_PDF">
-                <Image x:Name="btnExportPDF1" Source="/ExportPDF.png" Width="16" Height="16"/>
+                <Image x:Name="btnExportPDF1" Source="/Images/ExportPDF.png" Width="16" Height="16"/>
             </Button>
         </ToolBar>
-        <Border CornerRadius="10 10 10 10" Width="100" Height="80" VerticalAlignment="Top" Margin="10 0 10 0">
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="#FFA3A59A" Offset="0"/>
-                    <GradientStop Color="#FFC9D2B2" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
-            <TextBlock Text="MG" Foreground="#ffffff" FontSize="22" FontWeight="SemiBold" TextAlignment="Center" VerticalAlignment="Center" Margin="3 0 0 2" InputScope="LogOnName"/>
-        </Border>
-        
-        <DockPanel LastChildFill="False" Width="100" Background="#FF8E927E">
+
+        <DockPanel LastChildFill="False" Width="100" Background="#FF531167" Height="709">
             <Border CornerRadius="10 10 10 10" Width="100" Height="40" VerticalAlignment="Top">
                 <Border.Background>
-                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                        <GradientStop Color="#FFA3A59A" Offset="0"/>
-                        <GradientStop Color="#FFC9D2B2" Offset="1"/>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD061F1"/>
+                        <GradientStop Color="#FF531167" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-                <Button x:Name="NewRtfNoteBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10" Click="NewRtfNoteBtn_Click" Background="Transparent" FontWeight="SemiBold" Foreground="White" BorderBrush="Transparent">New RTF Note</Button>
+                <Button x:Name="NewRtfNoteBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10" Click="NewRtfNoteBtn_Click" Background="Transparent" FontWeight="SemiBold" Foreground="White" BorderBrush="Transparent" FontFamily="Lucida Console" FontSize="10">New RTF Note</Button>
             </Border>
 
             <Border CornerRadius="10 10 10 10" Width="100" Height="40" VerticalAlignment="Top" Margin="-100 50 0 0">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                        <GradientStop Color="#FFA3A59A" Offset="0"/>
-                        <GradientStop Color="#FFC9D2B2" Offset="1"/>
+                        <GradientStop Color="#FFD061F1" Offset="0"/>
+                        <GradientStop Color="#FF531167" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-                <Button x:Name="NewMarkdownNoteBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10" Click="NewMdNoteBtn_Click" Background="Transparent" FontWeight="SemiBold" Foreground="White" BorderBrush="Transparent">New MD Note</Button>
+                <Button x:Name="NewMarkdownNoteBtn" DockPanel.Dock="Top" Height="25" Margin="7,10,7,10" Click="NewMdNoteBtn_Click" Background="Transparent" FontWeight="SemiBold" Foreground="White" BorderBrush="Transparent" FontSize="10" FontFamily="Lucida Console">New MD Note</Button>
             </Border>
-
-            <Border CornerRadius="10 10 10 10" Width="100" Height="40" VerticalAlignment="Top" Margin="-100 900 0 0">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                        <GradientStop Color="#FFA3A59A" Offset="0"/>
-                        <GradientStop Color="#FFC9D2B2" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-                <Button x:Name="ConnectUSIBtn" DockPanel.Dock="Bottom" Height="25" Margin="7,10,7,10" Background="Transparent" FontWeight="SemiBold" Foreground="White" BorderBrush="Transparent">Connect to USI</Button>
-            </Border>
-
-            <ListBox x:Name="noteList" Width="86" Margin="7,0,7,0" Height="822" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="#FF8E927E" Foreground="White"/>
         </DockPanel>
-        
+
         <DockPanel>
             <ToolBar DockPanel.Dock="Left" Width="2">
                 <GridSplitter Height="100" Width="6"/>
                 <GridSplitter HorizontalAlignment="Center" Height="Auto" VerticalAlignment="Top" Width="5" Panel.ZIndex="-15"/>
             </ToolBar>
         </DockPanel>
-        <TabControl x:Name="RTETabControl" Height="Auto" Width="Auto" ItemStringFormat="" Margin="0,10,9,0">
+        <TabControl x:Name="RTETabControl" Height="719" Width="1082" ItemStringFormat="" Margin="0,10,9,0">
             <TabItem>
                 <TabItem.Header>
                     <TextBlock Text="RTF Note"/>
                 </TabItem.Header>
-                <RichTextBox x:Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" VerticalScrollBarVisibility="Auto" Block.LineHeight="2" SpellCheck.IsEnabled="True" RenderTransformOrigin="0.5,0.5" DockPanel.Dock="Right" Height="937">
+                <RichTextBox x:Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" VerticalScrollBarVisibility="Auto" Block.LineHeight="2" SpellCheck.IsEnabled="True" RenderTransformOrigin="0.5,0.5" DockPanel.Dock="Right" Width="Auto" Margin="2,2,2,2">
                     <RichTextBox.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -233,23 +176,26 @@
                     <TextBlock Text="Markdown Note"/>
                 </TabItem.Header>
                 <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="23*"/>
+                        <RowDefinition Height="668*"/>
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="39*"/>
+                        <ColumnDefinition Width="503*"/>
+                        <ColumnDefinition Width="542*"/>
                     </Grid.ColumnDefinitions>
-                    <RichTextBox x:Name="mdTextBox" Grid.Column="0"  Margin="5" Block.LineHeight="2" TextChanged="TextBox_TextChanged"/>
-                    <WebBrowser x:Name="webBrowser"  Grid.Column="1" Margin="5"/>
+                    <RichTextBox x:Name="mdTextBox" Grid.Column="0"  Margin="2,2,6,2" Block.LineHeight="2" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <WebBrowser x:Name="webBrowser"  Grid.Column="2" Margin="4,5,5,5" Grid.RowSpan="2"/>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Border CornerRadius="0 10 0 10" Width="100">
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="#FFA3A59A" Offset="0"/>
-                    <GradientStop Color="#FFC9D2B2" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
-            <TextBlock Text="MG" Foreground="#ffffff" FontSize="22" FontWeight="SemiBold" TextAlignment="Center" VerticalAlignment="Center" Margin="3 0 0 2"/>
-        </Border>
     </DockPanel>
 </Window>
+    
+    
+    
+    
+    
+    
+

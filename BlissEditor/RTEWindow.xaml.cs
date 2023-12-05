@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -21,8 +22,6 @@ using QuestPDF.Infrastructure;
 using System.Reflection;
 using Image = System.Windows.Controls.Image;
 using System.Net;
-using System.Windows.Controls.Primitives;
-
 
 namespace BlissEditor
 {
@@ -54,7 +53,6 @@ namespace BlissEditor
             cmbFontSize.SelectedItem = temp;
             temp = rtbEditor.Selection.GetPropertyValue(TextElement.FontStyleProperty);
             cmbFontColor.SelectedItem = temp;
-
         }
 
         private void Open_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -102,29 +100,6 @@ namespace BlissEditor
 
         private void Insert_Image(object sender, RoutedEventArgs e)
         {
-            //OpenFileDialog openFileDialog = new OpenFileDialog();
-            //openFileDialog.Filter = "Builder (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg";
-            //openFileDialog.Multiselect = true;
-
-            //if (openFileDialog.ShowDialog() == true)
-            //{
-            //    var clipboardData = Clipboard.GetDataObject();
-            //    //BitmapImage bitmapImage = new BitmapImage(new Uri(openFileDialog.FileName, UriKind.Absolute));
-            //    Uri uri = new Uri(openFileDialog.FileName, UriKind.Absolute);
-            //    BitmapImage bitmapImage = new BitmapImage();
-            //    bitmapImage.BeginInit();
-            //    bitmapImage.UriSource = uri;
-
-            //    bitmapImage.DecodePixelHeight = 200;
-            //    bitmapImage.DecodePixelWidth = 200;
-
-            //    bitmapImage.EndInit();
-            //    Clipboard.SetImage(bitmapImage);
-            //    rtbEditor.Paste();
-            //    Clipboard.SetDataObject(clipboardData);
-
-            //}
-
             //Code below and for Image_Height and TextRangeExt class used from:
             /* https://stackoverflow.com/questions/72234599/how-to-dynamically-resize-image-in-richtextbox-with-event-or-zooming */
             var image = new System.Windows.Controls.Image();
@@ -138,10 +113,8 @@ namespace BlissEditor
                 imgsrc.BeginInit();
                 imgsrc.StreamSource = File.Open(dlg.FileName, FileMode.Open);
                 imgsrc.EndInit();
-                image.Source = imgsrc;
 
-                image.Height = 200;
-                image.Width = 200;
+                image.Source = imgsrc; 
 
                 var para = new Paragraph();
                 para.Inlines.Add(image);
@@ -151,25 +124,56 @@ namespace BlissEditor
 
         private void Insert_Table(object sender, RoutedEventArgs e)
         {
+            // Maximum number of rows or cols that can be created.
+            int maxCount = 30;
+
+            BlissEditor.InsertTable tableDialog = new InsertTable();
+            tableDialog.ShowDialog();
+
+            int rowCount = Convert.ToInt32(InsertTable.Rows);
+            int colCount = Convert.ToInt32(InsertTable.Cols);
+
+            if (rowCount > maxCount || colCount > maxCount)
+            {
+                MessageBox.Show("Try a number below 30!");
+                return;
+            }
+
             rtbEditor.BeginChange();
             var table = new Table();
-            var gridLenghtConvertor = new GridLengthConverter();
-            table.Columns.Add(new TableColumn());
-            table.Columns.Add(new TableColumn());
-            table.Columns.Add(new TableColumn());
 
+            // Customize table theme
+            table.Background = Brushes.LightGray;
+            table.BorderBrush = Brushes.DarkGray;
+            table.BorderThickness = new Thickness(1);
+
+            for (int i = 0; i < colCount; i++)
+            {
+                table.Columns.Add(new TableColumn());
+            }
 
             table.RowGroups.Add(new TableRowGroup());
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < rowCount; i++)
             {
-                table.RowGroups[0].Rows.Add(new TableRow());
-                table.RowGroups[0].Rows[i].Cells.Add(new TableCell(new Paragraph(new Run("Row" + (i + 1).ToString() + " Column1"))) /*{ BorderThickness = new Thickness(1), BorderBrush = Brushes.Black }*/);
-                table.RowGroups[0].Rows[i].Cells.Add(new TableCell(new Paragraph(new Run("Row" + (i + 1).ToString() + " Column2"))) /*{ BorderThickness = new Thickness(1), BorderBrush = Brushes.Black }*/);
-                table.RowGroups[0].Rows[i].Cells.Add(new TableCell(new Paragraph(new Run("Row" + (i + 1).ToString() + " Column3"))) /*{ BorderThickness = new Thickness(1), BorderBrush = Brushes.Black }*/);
+                var row = new TableRow();
+                for (int j = 0; j < colCount; j++)
+                {
+                    TableCell cell = new TableCell(new Paragraph(new Run($"Row {i + 1} Column {j + 1}")));
+
+                    // Customize cell borders
+                    cell.BorderBrush = Brushes.Black;
+                    cell.BorderThickness = new Thickness(1);
+
+                    row.Cells.Add(cell);
+                }
+                table.RowGroups[0].Rows.Add(row);
             }
+
             rtbEditor.Document.Blocks.Add(table);
+
+            // Add a newline (new paragraph) after the table
+            rtbEditor.Document.Blocks.Add(new Paragraph());
             rtbEditor.EndChange();
-            rtbEditor.AppendText("newline");
         }
 
         private void Export_PDF(object sender, RoutedEventArgs e)
