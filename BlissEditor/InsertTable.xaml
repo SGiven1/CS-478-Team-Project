@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BlissEditor"
         mc:Ignorable="d"
-        Title="InsertTable" Height="178" Width="242">
+        Title="InsertTable" Height="178" Width="242" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBox x:Name="colTextBox" HorizontalAlignment="Left" Margin="78,57,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="rowsTextBox" HorizontalAlignment="Left" Margin="78,20,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="120"/>

@@ -112,9 +112,18 @@ namespace BlissEditor
                 var imgsrc = new BitmapImage();
                 imgsrc.BeginInit();
                 imgsrc.StreamSource = File.Open(dlg.FileName, FileMode.Open);
+                BlissEditor.InsertImage imageDialog = new InsertImage();
+                imageDialog.ShowDialog();
+
+                int hght = Convert.ToInt32(InsertImage.Hght);
+                int wdth = Convert.ToInt32(InsertImage.Wdth);
+                imgsrc.DecodePixelHeight = hght;
+                imgsrc.DecodePixelWidth = wdth;
                 imgsrc.EndInit();
 
-                image.Source = imgsrc; 
+                image.Source = imgsrc;
+                image.Height = imgsrc.Height;
+                image.Width = imgsrc.Width;
 
                 var para = new Paragraph();
                 para.Inlines.Add(image);

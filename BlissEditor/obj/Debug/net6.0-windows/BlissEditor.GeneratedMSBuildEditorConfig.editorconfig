@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlissEditor
-build_property.ProjectDir = C:\Users\mgonzales\OneDrive - University of Southern Indiana\Desktop\CS-478-Team-Project-main\BlissEditor\
+build_property.ProjectDir = C:\Users\stile\Documents\GitHub\CS-478-Team-Project\BlissEditor\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
