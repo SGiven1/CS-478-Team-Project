@@ -37,7 +37,6 @@
             </Border.Background>
             <Grid>
                 <Border Background="#FFFFFF" Height="150" Width="180" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20" Opacity="0.3" Margin="5,5,5,5"/>
-
                 <TextBox x:Name="txbUsername" Text="Username" VerticalAlignment="Top" Width="120" Background="Transparent" VerticalContentAlignment="Center" Foreground="White" BorderThickness="1" BorderBrush="#FFF3EFD6" Margin="0,70,0,0" HorizontalAlignment="Center" FontFamily="Lucida Console">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">

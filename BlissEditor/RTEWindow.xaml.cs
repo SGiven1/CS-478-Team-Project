@@ -51,8 +51,8 @@ namespace BlissEditor
             cmbFontFamily.SelectedItem = temp;
             temp = rtbEditor.Selection.GetPropertyValue(Inline.FontSizeProperty);
             cmbFontSize.SelectedItem = temp;
-            temp = rtbEditor.Selection.GetPropertyValue(TextElement.FontStyleProperty);
-            cmbFontColor.SelectedItem = temp;
+            //temp = rtbEditor.Selection.GetPropertyValue(TextElement.FontStyleProperty);
+            //cmbFontColor.SelectedItem = temp;
         }
 
         private void Open_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -90,13 +90,13 @@ namespace BlissEditor
             rtbEditor.Selection.ApplyPropertyValue(Inline.FontSizeProperty, cmbFontSize.Text);
         }
 
-        private void cmbFontColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (cmbFontColor.SelectedItem != null)
-            {
-               rtbEditor.Selection.ApplyPropertyValue(TextElement.FontStyleProperty, cmbFontColor.SelectedItem);
-            }
-        }
+        //private void cmbFontColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    if (cmbFontColor.SelectedItem != null)
+        //    {
+        //       rtbEditor.Selection.ApplyPropertyValue(TextElement.FontStyleProperty, cmbFontColor.SelectedItem);
+        //    }
+        //}
 
         private void Insert_Image(object sender, RoutedEventArgs e)
         {

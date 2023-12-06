@@ -73,13 +73,13 @@
             <Separator/>
             <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged"/>
             <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" TextBoxBase.TextChanged="cmbFontSize_TextChanged" Height="20"/>
-            <ComboBox x:Name="cmbFontColor" Width="95" SelectionChanged="cmbFontColor_SelectionChanged">
+            <!--<ComboBox x:Name="cmbFontColor" Width="95" SelectionChanged="cmbFontColor_SelectionChanged">
                 <ComboBox.Style>
                     <Style TargetType="ComboBox">
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding Path}" Value="True">
-                                <Setter Property="Background" Value="{StaticResource Black}"/>
-                                <Setter Property="Background" Value="{StaticResource AliceBlue}"/>
+                                <Setter Property="Foreground" Value="{StaticResource Black}"/>
+                                <Setter Property="Foreground" Value="{StaticResource AliceBlue}"/>
                                 <Setter Property="Foreground" Value="{StaticResource AntiqueWhite}"/>
                                 <Setter Property="Foreground" Value="{StaticResource Aqua}"/>
                                 <Setter Property="Foreground" Value="{StaticResource DarkGray}"/>
@@ -117,7 +117,7 @@
                         </Style.Triggers>
                     </Style>
                 </ComboBox.Style>
-            </ComboBox>
+            </ComboBox> -->
 
             <Button Name="btnTable" Click="Insert_Table">
                 <Image x:Name="btnTable1" Source="/Images/Table.png" Width="16" Height="16"/>
