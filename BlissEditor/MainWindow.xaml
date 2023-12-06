@@ -26,7 +26,9 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/Images/Background.jpg" AlignmentY="Top" AlignmentX="Center" Opacity="0.8"/>
+        </Grid.Background>
 
         <Border Grid.Row="2" Grid.Column="1" CornerRadius="20" Margin="270,20,270,20" Grid.RowSpan="2">
             <Border.Background>
@@ -74,6 +76,6 @@
                 </Button>
             </Grid>
         </Border>
-        <Label Grid.Column="1" Content="Welcome to Bliss" HorizontalAlignment="Center" Margin="0,70,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="72 Monospace" FontSize="48" Height="80" Width="470" Foreground="White"/>
+        <Label Grid.Column="1" Content="Welcome to Bliss" HorizontalAlignment="Center" Margin="0,70,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Georgia" FontSize="48" Height="80" Width="387" Foreground="White"/>
     </Grid>
 </Window>

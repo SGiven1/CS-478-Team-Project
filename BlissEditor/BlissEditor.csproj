@@ -28,6 +28,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Resource Include="Background.jpg" />
 	  <Resource Include="Images\Background.jpg" />
 	  <Resource Include="Images\Bold.png" />
 	  <Resource Include="Images\boplin-icon.png" />
